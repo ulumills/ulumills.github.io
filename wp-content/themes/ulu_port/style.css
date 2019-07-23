@@ -31,14 +31,14 @@ details {display: block;}
 summary {display: list-item;}
 template {display: none;}
 [hidden] {display: none;}
-body, button, input, select, optgroup, textarea {color: #404040;font-family: "Neuzeit Grotesk",sans-serif;font-size: 16px;font-size: 1rem;line-height: 1.5;}
+body, button, input, select, optgroup, textarea {color: #404040;font-family: neuzeit-grotesk,sans-serif;font-size: 16px;font-size: 1rem;line-height: 1.5;}
 h1 {display: none;}
 h1, h2, h3, h4, h5, h6 {clear: both;}
 h2, h3 {font-family: "Jubilat";letter-spacing: .2px;}
 h2 {font-size: 7vh;line-height: 7.3vh;font-weight: 500;margin-bottom: .5em;}
 h3 {font-size: 1.75em;font-weight: 500;padding-bottom: 1em;}
 h4 {padding-top: 1em;padding-bottom: .5em;}
-h4 {font-family: "Neuzeit Grotesk";font-weight: 600;text-transform: uppercase;letter-spacing: .6px;color: #aaa;}
+h4 {font-family: neuzeit-grotesk;font-weight: 600;text-transform: uppercase;letter-spacing: .6px;color: #aaa;}
 aside {color: #aaa;}
 p {margin-bottom: 1.5em;padding-bottom: 1em;}
 ::selection {color: whitesmoke;background: gray;}
