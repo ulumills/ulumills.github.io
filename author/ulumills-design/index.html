@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<script>
+		function trace(msg) {
+			function var_dump(arr, level) {
+				var dumped_text = "";
+				if (!level)
+					level = 0;
+
+				//The padding given at the beginning of the line.
+				var level_padding = "";
+				for ( var j = 0; j < level + 1; j++ )
+					level_padding += "    ";
+
+				if ( 'object' === typeof(arr) ) { //Array/Hashes/Objects
+					for ( var item in arr ) {
+						var value = arr[item];
+
+						if ( 'object' === typeof(value) ) { //If it is an array,
+							dumped_text += level_padding + "'" + item + "' ...\n";
+							dumped_text += var_dump(value, level + 1);
+						} else {
+							dumped_text += level_padding + "'" + item + "' => " + "(" + typeof(value) + ") \"" + value + "\"\n";
+						}
+					}
+				} else { //Stings/Chars/Numbers etc.
+					dumped_text = "(" + typeof(arr) + ") " + arr;
+					return dumped_text;
+				}
+				if ( 0 === level ) {
+					return '(object)' + String.fromCharCode(10) + dumped_text;
+				} else {
+					return dumped_text;
+				}
+			}
+			trace.trace_queue.push(var_dump(msg));
+		}
+		trace.trace_queue = []; // Don't pollute global namespace
+
+		// Try to keep order of operations by transmitting via queue
+		setInterval(function() {
+			if (0 === trace.trace_queue.length )
+				return;
+			var msg = trace.trace_queue.shift();
+
+			// Transmit message via XHR
+			var xmlhttp;
+			if ( window.XMLHttpRequest ) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp = new ActiveXObject( "Microsoft.XMLHTTP" );
+			}
+			var addy = window.location.toString();
+			var url = trace.getLeftMost( addy, "//" ) + "//";
+			url += trace.getLeftMost( trace.delLeftMost( addy + "/", "//"), "/") + "/ds-plugins/debug-trace/debug-trace.php";
+			xmlhttp.open( "GET", url + "?m=" + encodeURIComponent( msg.toString().substring( 0, 2000 ) ), true );
+			xmlhttp.send();
+		}, 50);
+
+		// Utility parsing functions in trace namespace
+		trace.delLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf(sFind, i);
+				if ( -1 !== f ) {
+					return sSource.substr( f + sFind.length, sSource.length );
+					break;
+				}
+			}
+			return sSource;
+		};
+		trace.getLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf( sFind, i );
+				if ( -1 !== f ) {
+					return sSource.substr( 0, f );
+					break;
+				}
+			}
+			return sSource;
+		};
+	</script>
+<title>ulumills.design – Ulu Mills' portfolio</title>
+
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://ulumills.github.io/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ulu_port-style-css" href="https://ulumills.github.io/wp-content/themes/ulu_port/style.css" type="text/css" media="all">
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+
+
+
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		    <link rel="stylesheet" href="https://use.typekit.net/muh2ytn.css">
+</head>
+
+<body class="archive author author-ulumills-design author-1 hfeed">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header">
+		<div class="site-branding">
+			
+				
+				
+		</div>
+
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
+            <div><p id="logo">Ulu Mills</p></div>
+            <div class="menu-primary-menu-container"><ul id="primary-menu" class="menu"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-23"><a href="https://ulumills.github.io/">Work</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://ulumills.github.io/writing/">Writing</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://ulumills.github.io/about/">About</a></li>
+</ul></div>		</nav>
+	</header>
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">Author: <span class="vcard">ulumills.design</span></h1>			</header>
+
+			
+<article id="post-43" class="post-43 post type-post status-publish format-standard hentry category-uncategorized tag-education tag-people">
+	<header class="entry-header">
+		<h2 class="entry-title"><a href="https://ulumills.github.io/ryecatcher-mobilez/" rel="bookmark">RyeCatcher Mobile</a></h2>			<div class="entry-meta">
+				<span class="posted-on">Posted on <a href="https://ulumills.github.io/ryecatcher-mobilez/" rel="bookmark"><time class="entry-date published" datetime="2019-07-13T03:43:59+00:00">July 13, 2019</time><time class="updated" datetime="2019-07-13T22:46:43+00:00">July 13, 2019</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://ulumills.github.io/author/ulumills-design/">ulumills.design</a></span></span>			</div>
+			</header>
+
+	
+	<div class="entry-content">
+		
+<p>Oh snap, there’s nothing written yet!</p>
+	</div>
+
+	<footer class="entry-footer">
+		<span class="cat-links">Posted in <a href="https://ulumills.github.io/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="tags-links">Tagged <a href="https://ulumills.github.io/tag/education/" rel="tag">education</a>, <a href="https://ulumills.github.io/tag/people/" rel="tag">people</a></span><span class="comments-link"><a href="https://ulumills.github.io/ryecatcher-mobilez/#respond">Leave a Comment<span class="screen-reader-text"> on RyeCatcher Mobile</span></a></span>	</footer>
+</article>
+
+<article id="post-36" class="post-36 post type-post status-publish format-standard has-post-thumbnail hentry category-education category-futuring category-people category-socialimpact tag-futuring tag-people tag-socialimpact">
+	<header class="entry-header">
+		<h2 class="entry-title"><a href="https://ulumills.github.io/aviviz/" rel="bookmark">Avivi</a></h2>			<div class="entry-meta">
+				<span class="posted-on">Posted on <a href="https://ulumills.github.io/aviviz/" rel="bookmark"><time class="entry-date published" datetime="2019-07-11T04:06:00+00:00">July 11, 2019</time><time class="updated" datetime="2019-07-13T12:15:05+00:00">July 13, 2019</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://ulumills.github.io/author/ulumills-design/">ulumills.design</a></span></span>			</div>
+			</header>
+
+	
+		<a class="post-thumbnail" href="https://ulumills.github.io/aviviz/" aria-hidden="true" tabindex="-1">
+			<img width="3000" height="2000" src="https://ulumills.github.io/wp-content/uploads/2019/07/Avivi_hero.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Avivi" srcset="https://ulumills.github.io/wp-content/uploads/2019/07/Avivi_hero.png 3000w,https://ulumills.github.io/wp-content/uploads/2019/07/Avivi_hero-300x200.png 300w,https://ulumills.github.io/wp-content/uploads/2019/07/Avivi_hero-768x512.png 768w,https://ulumills.github.io/wp-content/uploads/2019/07/Avivi_hero-1024x683.png 1024w" sizes="(max-width: 3000px) 100vw, 3000px">		</a>
+
+		
+	<div class="entry-content">
+		
+<p>This is some test text.</p>
+
+
+
+<figure class="wp-block-pullquote hello"><blockquote><p>What ifff….?</p></blockquote></figure>
+
+
+
+<p></p>
+	</div>
+
+	<footer class="entry-footer">
+		<span class="cat-links">Posted in <a href="https://ulumills.github.io/category/education/" rel="category tag">education</a>, <a href="https://ulumills.github.io/category/futuring/" rel="category tag">futuring</a>, <a href="https://ulumills.github.io/category/people/" rel="category tag">people</a>, <a href="https://ulumills.github.io/category/socialimpact/" rel="category tag">socialimpact</a></span><span class="tags-links">Tagged <a href="https://ulumills.github.io/tag/futuring/" rel="tag">futuring</a>, <a href="https://ulumills.github.io/tag/people/" rel="tag">people</a>, <a href="https://ulumills.github.io/tag/socialimpact/" rel="tag">socialimpact</a></span><span class="comments-link"><a href="https://ulumills.github.io/aviviz/#respond">Leave a Comment<span class="screen-reader-text"> on Avivi</span></a></span>	</footer>
+</article>
+
+<article id="post-26" class="post-26 post type-post status-publish format-standard has-post-thumbnail hentry category-education tag-education tag-people">
+	<header class="entry-header">
+		<h2 class="entry-title"><a href="https://ulumills.github.io/lurnz/" rel="bookmark">LURN</a></h2>			<div class="entry-meta">
+				<span class="posted-on">Posted on <a href="https://ulumills.github.io/lurnz/" rel="bookmark"><time class="entry-date published" datetime="2019-07-11T02:08:36+00:00">July 11, 2019</time><time class="updated" datetime="2019-07-22T02:49:56+00:00">July 22, 2019</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://ulumills.github.io/author/ulumills-design/">ulumills.design</a></span></span>			</div>
+			</header>
+
+	
+		<a class="post-thumbnail" href="https://ulumills.github.io/lurnz/" aria-hidden="true" tabindex="-1">
+			<img width="6000" height="4000" src="https://ulumills.github.io/wp-content/uploads/2019/07/DSCF9892-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="LURN" srcset="https://ulumills.github.io/wp-content/uploads/2019/07/DSCF9892-1.jpg 6000w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF9892-1-300x200.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF9892-1-768x512.jpg 768w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF9892-1-1024x683.jpg 1024w" sizes="(max-width: 6000px) 100vw, 6000px">		</a>
+
+		
+	<div class="entry-content">
+		
+<h2>A new way to learn classroom management</h2>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-columns has-3-columns three-column">
+<div class="wp-block-column">
+<h4>Context</h4>
+
+
+
+<p>Design of Educational Games at Carnegie Mellon University</p>
+
+
+
+<h4>Brief</h4>
+
+
+
+<p>Design a game that teaches something.</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<h4>Team</h4>
+
+
+
+<p>Roger Strang, Laura Rodriguez and myself</p>
+
+
+
+<h4>Timeline</h4>
+
+
+
+<p>Twelve Weeks</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<h4>Tools</h4>
+
+
+
+<p>Sketch, Illustrator, Paper and Pen</p>
+
+
+
+<h4>Methods</h4>
+
+
+
+<p>Playtesting, Surveys, Guided Storytelling, Stakeholder interviews</p>
+</div>
+</div>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<ul class="wp-block-gallery columns-1"><li class="blocks-gallery-item"><figure><img src="https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1225-1024x683.jpg" alt="" data-id="149" data-link="https://ulumills.github.io/2019/07/11/lurnz/dscf1225/" class="wp-image-149" srcset="https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1225-1024x683.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1225-300x200.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1225-768x512.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="blocks-gallery-item"><figure><img src="https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1240-1024x683.jpg" alt="" data-id="150" data-link="https://ulumills.github.io/2019/07/11/lurnz/dscf1240/" class="wp-image-150" srcset="https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1240-1024x683.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1240-300x200.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1240-768x512.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="blocks-gallery-item"><figure><img src="https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1270-1024x683.jpg" alt="" data-id="151" data-link="https://ulumills.github.io/2019/07/11/lurnz/dscf1270/" class="wp-image-151" srcset="https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1270-1024x683.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1270-300x200.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1270-768x512.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="blocks-gallery-item"><figure><img src="https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1277-1024x683.jpg" alt="" data-id="152" data-link="https://ulumills.github.io/2019/07/11/lurnz/dscf1277/" class="wp-image-152" srcset="https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1277-1024x683.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1277-300x200.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/07/DSCF1277-768x512.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li></ul>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h2 style="text-align:center" class="hmw">How might we help new teachers learn critical classroom management skills in a safe environment?</h2>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>The challenge:</h3>
+
+
+
+<div class="wp-block-columns has-2-columns two-column">
+<div class="wp-block-column">
+<p><strong>What is classroom management?</strong></p>
+
+
+
+<p>Classroom management describes the skills necessary to ensure sessions run smoothly. Good classroom management ensures that students stay actively engaged, minimizes disruption to other students, sets repeatable norms and establishes positive rapport between students and teachers.</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<p><strong>Why is it important?</strong></p>
+
+
+
+<p>It’s important for learning: “classroom management had the largest effect on student achievement. This makes intuitive sense—students cannot learn in a chaotic, poorly managed classroom”  Wang, Haertel, and Walberg (1993)</p>
+
+
+
+<p>“If you don’t have classroom management you can’t teach.” Frieda Griffin (teacher w/ 51 years of experience)</p>
+</div>
+</div>
+
+
+
+<p><strong>The teacher training issue</strong></p>
+
+
+
+<p>Classroom dynamics are extremely multifaceted and contextual, and classroom chemistry is hard to predict. Students might carry baggage from previous interactions, or be completely unaccustomed to one another. </p>
+
+
+
+<p>Factors like these simply can’t easily be conveyed through advice outside of a realistic context.</p>
+
+
+
+<p>“We conclude that, in the program we studied, prospective teachers have fewer opportunities to engage in approximations that focus on contingent, interactive practice than do novices in the other two professions we studied.”Grossman et al. (<a href="https://cset.stanford.edu/sites/default/files/files/documents/publications/Grossman-TeachingPracticeACross-ProfessionalPerspective.pdf">2009</a>)</p>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>The solution:</h3>
+
+
+
+<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile two-column" style="grid-template-columns:auto 49%"><figure class="wp-block-media-text__media"><img src="https://ulumills.github.io/wp-content/uploads/2019/07/LURN_Logo.png" alt="" class="wp-image-96" srcset="https://ulumills.github.io/wp-content/uploads/2019/07/LURN_Logo.png 751w,https://ulumills.github.io/wp-content/uploads/2019/07/LURN_Logo-300x189.png 300w" sizes="(max-width: 751px) 100vw, 751px"></figure><div class="wp-block-media-text__content">
+<p>LURN is a board game designed to simulate a classroom environment in a workshop setting, to allow pre-service teachers to slow down and discuss their reactions, thinking fast and slow, and make the best decisions for their students.</p>
+</div></div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>How to Play</h3>
+
+
+
+<p><strong>In a nutshell…</strong></p>
+
+
+
+<p>Classroom management is a complex topic, where sometimes you have to weigh individual students’ needs, and other times where you have to resist and make objective decisions. Through the course of this game, you’ll be faced with students and situations, and be challenged to work with your peers to determine the best strategy for maintaining a positive rapport with your students. </p>
+
+
+
+<p><strong>A typical round</strong></p>
+
+
+
+<h4>Build a student</h4>
+
+
+
+<p>Reveal student traits and assign him a persona card. Then discuss the implications of his traits on his behavior.</p>
+
+
+
+<h4>Reveal the Situation</h4>
+
+
+
+<p>This student was involved in an incident at school. Discuss how his traits may have impacted his behavior, and choose a strategy to deal with it.<br></p>
+
+
+
+<p>Each player votes before the score is revealed.<br></p>
+
+
+
+<h4>Score your strategies</h4>
+
+
+
+<p>Scores are sometimes based on the student, sometimes not. <br></p>
+
+
+
+<p>Each player collects their respective rapport chips and places them on the score board.<br></p>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>Why use games to teach classroom management?</h3>
+
+
+
+<p>“A third space–a practice space–is needed that combines the authenticity of the practicum classroom with the control and scaffolding of the GSE seminar room (or through books).”</p>
+
+
+
+<p>-MIT Teaching Systems Lab</p>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>Exploratory Research</h3>
+
+
+
+<h4>Secondary Research</h4>
+
+
+
+<p>placeholder text</p>
+
+
+
+<h4>Survey</h4>
+
+
+
+<p>In general novices have very short-sighted responses to classroom incidents.</p>
+
+
+
+<p>In general experts treat students holistically and in a personalized manner.</p>
+
+
+
+<p>Since we wanted to understand teachers’ experiences more fully we reached out to expert teachers and novice teachers alike through a survey. We gathered 17 unique responses.  From what the novices said, our insight was that in general, novices have very short-sighted responses to classroom incidents.  They focused more on dealing with an issue in the moment, rather than dealing with the root of the issue.  They would do things like yell at the students to make them stop talking or send students to the office for minor incidents.</p>
+
+
+
+<h4>Interviews</h4>
+
+
+
+<p>placeholder text</p>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p>From this, we understood the breadth of scenarios teachers encounter in the classroom and the factors that influence them. There isn’t an established framework for classroom management, so we experimented to create our own classification systems. (This stuff was important to try to formalize so that it could be easily incorporated into a system for game mechanics)</p>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>Learning Objectives</h3>
+
+
+
+<div class="wp-block-columns has-2-columns two-column">
+<div class="wp-block-column">
+<h4>Short Term Responses</h4>
+
+
+
+<p>Teachers will be able to scale their reactions to student behaviors appropriately in a given context, taking into account the visibility, directness, and degree of sternness in their response (e.g. volume, language, body language).</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<h4>Long Term Responses</h4>
+
+
+
+<p>Given a student incident, teachers will be able to identify and apply effective strategies for re-establishing broken routines/expectations, including considering the frequency with which a pre-standing issue is addressed.</p>
+</div>
+</div>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>Concept Development and Testing</h3>
+
+
+
+<p><br></p>
+
+
+
+<h3>Aligning Design Decisions to Learning Objectives</h3>
+
+
+
+<p>The EDGE Framework</p>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<h3>Key Features</h3>
+
+
+
+<p></p>
+
+
+
+<h3>Reflections</h3>
+
+
+
+<h4>What was helpful</h4>
+
+
+
+<h4>What has the most potential</h4>
+
+
+
+<h4>Key Takeaways</h4>
+
+
+
+<h4>Given more time…</h4>
+
+
+
+<h4>The future</h4>
+
+
+
+<p></p>
+
+
+
+<div style="height:500px" aria-hidden="true" class="wp-block-spacer"></div>
+	</div>
+
+	<footer class="entry-footer">
+		<span class="cat-links">Posted in <a href="https://ulumills.github.io/category/education/" rel="category tag">education</a></span><span class="tags-links">Tagged <a href="https://ulumills.github.io/tag/education/" rel="tag">education</a>, <a href="https://ulumills.github.io/tag/people/" rel="tag">people</a></span>	</footer>
+</article>
+
+		</main>
+	</div>
+
+
+<p id="secondary" class="widget-area">
+	<section id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://ulumills.github.io/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form></section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+											<li>
+					<a href="https://ulumills.github.io/ryecatcher-mobilez/">RyeCatcher Mobile</a>
+									</li>
+											<li>
+					<a href="https://ulumills.github.io/aviviz/">Avivi</a>
+									</li>
+											<li>
+					<a href="https://ulumills.github.io/lurnz/">LURN</a>
+									</li>
+					</ul>
+		</section><section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">Recent Comments</h2><ul id="recentcomments"></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">Archives</h2>		<ul>
+				<li><a href="https://ulumills.github.io/2019/07/">July 2019</a></li>
+		</ul>
+			</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
+				<li class="cat-item cat-item-8"><a href="https://ulumills.github.io/category/education/">education</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="https://ulumills.github.io/category/futuring/">futuring</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="https://ulumills.github.io/category/people/">people</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="https://ulumills.github.io/category/socialimpact/">socialimpact</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://ulumills.github.io/category/uncategorized/">Uncategorized</a>
+</li>
+		</ul>
+			</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">Meta</h2>			<ul>
+						<li><a href="https://ulumills.github.io/wp-login.php">Log in</a></li>
+			<li><a href="https://ulumills.github.io/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://ulumills.github.io/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</section></p>
+
+	</div>
+
+	<footer id="colophon" class="site-footer">
+		<div class="site-info">
+				<p> this website is my code playground! handcoded by ulu. © 2019. </p>
+		</div>
+	</footer>
+</div>
+
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port/js/navigation.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port/js/skip-link-focus-fix.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port/js/main.js"></script>
+
+
+</body>
+</html>
