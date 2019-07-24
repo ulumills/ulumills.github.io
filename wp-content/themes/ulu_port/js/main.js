@@ -5,6 +5,7 @@
 
         $(".project").addClass("show");
         $(".intro").hide();
+        $("#background").hide();
 
 
         var projectTitle = ["spectacle", "aviviz", "compass", "ryecatcher-mobilez", "lurnz"];
@@ -18,10 +19,11 @@
 //       $("h2").css("color", "white");
                     $('#home-text').fadeOut(0);
                     $('#btnContainer').fadeOut(0);
-                    $('#' + projectTitle + '-intro').fadeIn(0);
-                    $("#background").addClass(projectTitle).fadeIn(0);
+                    $('#' + projectTitle + '-intro').fadeIn(500);
+                    $("#background").fadeIn(300);
                     console.log("hello");
-//        $(this).css("background-image", "none");
+       $(".project-overlay").addClass("hide");
+       $(".project").addClass("hide");
 
 
                 },
@@ -33,7 +35,8 @@
                     $('#home-text').fadeIn(0);
                     $('#btnContainer').fadeIn(0);
                     $("#" + projectTitle + "-intro").fadeOut(0);
-                    $(this).css("background-image", "");
+                    $(".project-overlay").removeClass("hide");
+                    $(".project").removeClass("hide");
 
                 });
 
