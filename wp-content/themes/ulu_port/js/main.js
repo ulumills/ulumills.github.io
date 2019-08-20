@@ -5,10 +5,10 @@
 
         $(".project").addClass("show");
         $(".intro").hide();
-        $("#background").hide();
+        $(".background").hide();
 
 
-        var projectTitle = ["spectacle", "aviviz", "compass", "ryecatcher-mobilez", "lurnz"];
+        var projectTitle = ["spectacle", "avivi", "compass", "ryecatcher-mobile", "lurn"];
         projectTitle.forEach(function(projectTitle){
 
             // $("#" + projectTitle + "-intro").hide();
@@ -20,7 +20,7 @@
                     $('#home-text').fadeOut(0);
                     $('#btnContainer').fadeOut(0);
                     $('#' + projectTitle + '-intro').fadeIn(500);
-                    $("#background").fadeIn(300);
+                    $("."+ projectTitle + "-background").fadeIn(300);
                     console.log("hello");
        $(".project-overlay").addClass("hide");
        $(".project").addClass("hide");
@@ -31,7 +31,7 @@
                 function(){
 //      $(".project").css("background-color", "white");
 //        $("h2").css("color", "black");
-                    $("#background").fadeOut(0).removeClass(projectTitle);
+                    $("."+ projectTitle + "-background").fadeOut(0);
                     $('#home-text').fadeIn(0);
                     $('#btnContainer').fadeIn(0);
                     $("#" + projectTitle + "-intro").fadeOut(0);
