@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" href="https://use.typekit.net/muh2ytn.css">
+		<script>
+		function trace(msg) {
+			function var_dump(arr, level) {
+				var dumped_text = "";
+				if (!level)
+					level = 0;
+
+				//The padding given at the beginning of the line.
+				var level_padding = "";
+				for ( var j = 0; j < level + 1; j++ )
+					level_padding += "    ";
+
+				if ( 'object' === typeof(arr) ) { //Array/Hashes/Objects
+					for ( var item in arr ) {
+						var value = arr[item];
+
+						if ( 'object' === typeof(value) ) { //If it is an array,
+							dumped_text += level_padding + "'" + item + "' ...\n";
+							dumped_text += var_dump(value, level + 1);
+						} else {
+							dumped_text += level_padding + "'" + item + "' => " + "(" + typeof(value) + ") \"" + value + "\"\n";
+						}
+					}
+				} else { //Stings/Chars/Numbers etc.
+					dumped_text = "(" + typeof(arr) + ") " + arr;
+					return dumped_text;
+				}
+				if ( 0 === level ) {
+					return '(object)' + String.fromCharCode(10) + dumped_text;
+				} else {
+					return dumped_text;
+				}
+			}
+			trace.trace_queue.push(var_dump(msg));
+		}
+		trace.trace_queue = []; // Don't pollute global namespace
+
+		// Try to keep order of operations by transmitting via queue
+		setInterval(function() {
+			if (0 === trace.trace_queue.length )
+				return;
+			var msg = trace.trace_queue.shift();
+
+			// Transmit message via XHR
+			var xmlhttp;
+			if ( window.XMLHttpRequest ) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp = new ActiveXObject( "Microsoft.XMLHTTP" );
+			}
+			var addy = window.location.toString();
+			var url = trace.getLeftMost( addy, "//" ) + "//";
+			url += trace.getLeftMost( trace.delLeftMost( addy + "/", "//"), "/") + "/ds-plugins/debug-trace/debug-trace.php";
+			xmlhttp.open( "GET", url + "?m=" + encodeURIComponent( msg.toString().substring( 0, 2000 ) ), true );
+			xmlhttp.send();
+		}, 50);
+
+		// Utility parsing functions in trace namespace
+		trace.delLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf(sFind, i);
+				if ( -1 !== f ) {
+					return sSource.substr( f + sFind.length, sSource.length );
+					break;
+				}
+			}
+			return sSource;
+		};
+		trace.getLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf( sFind, i );
+				if ( -1 !== f ) {
+					return sSource.substr( 0, f );
+					break;
+				}
+			}
+			return sSource;
+		};
+	</script>
+<title>Spectacle – Ulu Mills' portfolio</title>
+
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://ulumills.github.io/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ulu_port-style-css" href="https://ulumills.github.io/wp-content/themes/ulu_port/style.css" type="text/css" media="all">
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+
+
+
+
+
+
+
+
+
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-323 single-format-standard">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header">
+		<div class="site-branding">
+			
+				
+				
+		</div>
+
+
+
+
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
+            <div><p id="logo">Ulu Mills</p></div>
+            <div class="menu-primary-menu-container"><ul id="primary-menu" class="menu"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-23"><a href="https://ulumills.github.io/">Work</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://ulumills.github.io/writing/">Writing</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://ulumills.github.io/about/">About</a></li>
+</ul></div>		</nav>
+	</header>
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+		<div class="hero-caption"><p>Spectacle is a service that curates personalized package experiences centered around a cultural music event. 
+<br><br>
+It offers dining and entertainment paired with the main event, but the purpose of Spectacle extends beyond convenience–we sought to create a service that would <strong>encourage a symbiotic relationship with audiences and cultural arts institutions,</strong> so that future programming would be more reflective of the community, thus attracting more new audiences to help sustain them.</p></div>
+<article id="post-323" class="post-323 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized tag-people tag-socialimpact">
+	<header class="entry-header">
+		<h1 class="entry-title">Spectacle</h1>			<div class="entry-meta">
+				<span class="posted-on">Posted on <a href="https://ulumills.github.io/spectacle/" rel="bookmark"><time class="entry-date published" datetime="2019-08-20T22:09:02+00:00">August 20, 2019</time><time class="updated" datetime="2019-08-21T03:18:00+00:00">August 21, 2019</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://ulumills.github.io/author/ulumills-design/">ulumills.design</a></span></span>			</div>
+			</header>
+
+	
+			<div class="post-thumbnail">
+				<img width="878" height="637" src="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-hero.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-hero.png 878w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-hero-300x218.png 300w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-hero-768x557.png 768w" sizes="(max-width: 878px) 100vw, 878px">			</div>
+
+		
+	<div class="entry-content">
+		
+<figure><figure><iframe class="video aligncenter" title="vimeo-player" src="https://player.vimeo.com/video/274439319" width="900" height="506" frameborder="0" allowfullscreen=""></iframe></figure></figure>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h2><strong>An approachable introduction to the cultural arts</strong></h2>
+
+
+
+<div class="wp-block-columns has-3-columns three-column-uneven">
+<div class="wp-block-column">
+<h4>Context</h4>
+
+
+
+<p>Design for Service<br>Spring 2018 at Carnegie Mellon University</p>
+
+
+
+<h4>Brief</h4>
+
+
+
+<p>Work on a group project to develop a service for music, creating the concept, scenarios, blueprint, maps, and prototypes that you test along the way.</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<h4>Team</h4>
+
+
+
+<p><a target="_blank" href="http://joseph-hines.com/" rel="noreferrer noopener">Joe Hines</a>, <a target="_blank" href="http://lilysykim.com/" rel="noreferrer noopener">Lily Kim</a>,<br><a target="_blank" href="https://monica-huang.com/" rel="noreferrer noopener">Monica Huang</a> & myself</p>
+
+
+
+<h4>Key Contributions</h4>
+
+
+
+<p>Research Synthesis<br>Concept Development<br>Video Direction<br>Communication Design<br>Service Blueprint</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<h4>Time Frame</h4>
+
+
+
+<p>Nine Weeks</p>
+
+
+
+<h4>Tools & Methods</h4>
+
+
+
+<p>Adobe AfterEffects<br>InDesign<br>Illustrator<br>Pen + Paper</p>
+</div>
+</div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3 class="hmw">How might a music service increase engagement with the cultural arts in a way that is approachable, and fosters personal relevance to audiences?</h3>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p>The cultural arts face financial challenges in many parts of America, and we found that this is also true in Pittsburgh. Not only has there been a steady decline in attendance in recent years, the average patron is in their 40s.</p>
+
+
+
+<p>Many people are reluctant to attend due to either false preconceptions about what they’ll experience, or out of hesitation to invest time, money, and coordinative efforts into the unknown. </p>
+
+
+
+<p>We sought to help these users take the chance that might lead to a lifelong connection to the arts.</p>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>1. Brainstorming</h3>
+
+
+
+<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile" style="grid-template-columns:auto 56%"><figure class="wp-block-media-text__media"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-brainstorming-770x1024.jpg" alt="" class="wp-image-356" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-brainstorming-770x1024.jpg 770w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-brainstorming-225x300.jpg 225w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-brainstorming-768x1022.jpg 768w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-brainstorming.jpg 1539w" sizes="(max-width: 770px) 100vw, 770px"></figure><div class="wp-block-media-text__content">
+<p>The prompt for this project was free-form, the only constraint being that it had to involve music as a service. Once we assembled as a group, we immediately began a conversation about music, the many ways it affects our lives and the lives of others. </p>
+
+
+
+<p>The conversation naturally came to a convergence around culture. We began a narrative around music as roots and as seeds; music allows us to reconnect with our cultural roots, and to plant new cultural seeds in the discovery of new music.</p>
+
+
+
+<p>Then, we started a conversation about how this could evolve into a service, and saw an opportunity in music institutions with clear cultural value, yet were struggling to connect with new audiences, such as jazz, opera, and the symphony. </p>
+
+
+
+<p>We decided to initially focus on opera for our research because it’s an outwardly polarizing genre, and would generate an array of perspectives.</p>
+</div></div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>2. Defining Stakeholders</h3>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/spectaacle-stakeholder-map-1024x303.png" alt="" class="wp-image-359" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/spectaacle-stakeholder-map-1024x303.png 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/spectaacle-stakeholder-map-300x89.png 300w,https://ulumills.github.io/wp-content/uploads/2019/08/spectaacle-stakeholder-map-768x227.png 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>We thought about all the stakeholders such a service could impact, and found that it could extend beyond the opera company and its patrons. We decided to conduct research with a few key stakeholders to help set the direction our service would take.</p>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>3. Survey</h3>
+
+
+
+<p>We sent the survey to our inner circles and the college community to gather perspective on how young people view opera. Immediately a trend was clear:</p>
+
+
+
+<p class="has-medium-font-size"><strong>Those who haven’t seen opera tend to be wary of it, and those who have tend to enjoy it and become repeat viewers.</strong></p>
+
+
+
+<p>Respondents highlighted the preconceptions that prevented them from pursuing an opera experience on their own:</p>
+
+
+
+<p>High perceived cost. Although many opera companies offer heavily discounted tickets, especially for students, the idea that seeing an opera would be costly (and require formal attire) persists.</p>
+
+
+
+<p>Lack of interest in subject matter. Young audiences tend to see opera as unrelatable–despite the breadth of subject matter the genre traverses, the consistent outward image is of an older, ornate, European artform. The more innovative productions are not being sold well to new audiences.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-survey-work-1024x520.png" alt="" class="wp-image-362" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-survey-work-1024x520.png 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-survey-work-300x152.png 300w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-survey-work-768x390.png 768w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-survey-work.png 1600w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>Among those who have seen opera, we found that most were invited to their first by a friend or family member. Here we saw an opportunity: how could a service act as the friend that encouraged that first leap into seeing something new?</p>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>4. Scenarios</h3>
+
+
+
+<p>[placeholder for scenarios]</p>
+
+
+
+<p>From here, we developed four scenarios for potential services aimed at different new audience bases, covering a wide span of touchpoints.</p>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>5. Speed Dating</h3>
+
+
+
+<div class="wp-block-media-text alignwide has-media-on-the-right"><figure class="wp-block-media-text__media"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-speed-dating-1024x585.jpg" alt="" class="wp-image-366" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-speed-dating-1024x585.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-speed-dating-300x171.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-speed-dating-768x439.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure><div class="wp-block-media-text__content">
+<p>We tested these ideas on our classmates to see which would resonate with them the most. </p>
+
+
+
+<p>While the afterschool program got points for long-term engagement potential, the ticket lottery hit most of the marks of a viable service. We then set out to develop that idea further.</p>
+</div></div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>6. Stakeholder Interviews</h3>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-HOT-1024x493.png" alt="" class="wp-image-368" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-HOT-1024x493.png 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-HOT-300x144.png 300w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-HOT-768x370.png 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<blockquote class="wp-block-quote is-style-large"><p><strong>“If we are not creating programming that resonates with the general public then we have failed. We have to be cognizant about what is actually going on in the community around us.”</strong></p></blockquote>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-columns has-2-columns two-column">
+<div class="wp-block-column">
+<p>We scheduled interviews with engagement teams and other members of the opera and arts communities, operating from a local to a global scale. Their responses validated some of our initial assumptions.</p>
+
+
+
+<p>We learned that <strong>engagement is a persistent challenge</strong> across organizations, and that there really isn’t a silver bullet for solving it. Common efforts include cross-advertising with other arts institutions, offering discounts at nearby restaurants, and inviting schools to watch educational performances. At larger institutions with more room to experiment, there is an even broader range of engagement initiatives, including developing pocket operas for those in hospice care and babies!</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<p>Another complicated challenge for arts organizations is <strong>gathering feedback from audiences</strong>. Currently, their efforts are typically piecemeal, ranging from ticket sale observations, surveys included in newsletters, social media engagement, and simple word-of-mouth. </p>
+
+
+
+<p>Based on these conversations, we saw a need for approaching engagement holistically, thinking of it as extending before and after the performance, and allowing for a reliable, continuing dialogue between audiences and the institutions that serve them. Additionally, we expanded our service to include arts organizations beyond opera, as they not only often work in tandem, but opera seasons are typically too short to support a standalone service.</p>
+</div>
+</div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-columns has-2-columns"></div>
+
+
+
+<h3>7. Concept Definition</h3>
+
+
+
+<div class="wp-block-media-text alignwide has-media-on-the-right"><figure class="wp-block-media-text__media"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-visual-language-576x1024.png" alt="" class="wp-image-369" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-visual-language-576x1024.png 576w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-visual-language-169x300.png 169w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-visual-language-768x1366.png 768w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-visual-language.png 1600w" sizes="(max-width: 576px) 100vw, 576px"></figure><div class="wp-block-media-text__content">
+<h4>VISUAL LANGUAGE</h4>
+
+
+
+<p>We saw the visual and verbal tone of the app as crucial to ensuring new audiences would be open to engaging. Our dialogue often centered around what should be introduced when, with regard to revealing the performance, payment, and ratings. Should any of these three elements be too forceful or unnatural, the service would fail.</p>
+
+
+
+<p>For this reason, we started defining the look and feel rather early so that potential users could react.</p>
+</div></div>
+
+
+
+<h4>Early Sketches</h4>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/early-sketches-1024x768.jpg" alt="" class="wp-image-370" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/early-sketches-1024x768.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/early-sketches-300x225.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/early-sketches-768x576.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>8. User Tests</h3>
+
+
+
+<div class="wp-block-media-text alignwide has-media-on-the-right"><figure class="wp-block-media-text__media"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-user-tests-1024x749.jpg" alt="" class="wp-image-374" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-user-tests-1024x749.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-user-tests-300x219.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-user-tests-768x562.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure><div class="wp-block-media-text__content">
+<p>The users we tested with represented extremes among potential Spectacle users; we spoke with one user who seemed very reluctant to try new things, and one who was eager to, but also wanted a sense of luxury and value. Our ideal user sits somewhere between these two: those who might try a new arts experience if coordination were a little easier.</p>
+</div></div>
+
+
+
+<div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-user-spectrum-1024x331.png" alt="" class="wp-image-375" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-user-spectrum-1024x331.png 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-user-spectrum-300x97.png 300w,https://ulumills.github.io/wp-content/uploads/2019/08/spectacle-user-spectrum-768x248.png 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<hr class="wp-block-separator">
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p></p>
+	</div>
+
+	<footer class="entry-footer">
+		<span class="cat-links">Posted in <a href="https://ulumills.github.io/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="tags-links">Tagged <a href="https://ulumills.github.io/tag/people/" rel="tag">people</a>, <a href="https://ulumills.github.io/tag/socialimpact/" rel="tag">socialimpact</a></span>	</footer>
+</article>
+
+		</main>
+	</div>
+
+
+	</div>
+
+	<footer id="colophon" class="site-footer">
+		<div class="site-info">
+				<p> this website is my code playground! handcoded by ulu. © 2019. </p>
+		</div>
+	</footer>
+</div>
+
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port/js/navigation.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port/js/skip-link-focus-fix.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port/js/main.js"></script>
+
+
+</body>
+</html>
