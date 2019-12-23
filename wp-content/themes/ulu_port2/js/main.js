@@ -1,0 +1,171 @@
+jQuery(document).ready(function($) {
+    // document.addEventListener('touchstart', handler, {passive: true});
+
+    var viewportWidth = $(window).width();
+
+    if (viewportWidth > 768) {
+        $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
+            {
+                height: 'auto',                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
+                onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
+                    // console.log(percent);
+                }
+            });
+    }
+
+
+    $(function() {
+        $('body').removeClass('fade-out');
+    });
+
+
+
+
+    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        $(".intro").css("cursor", "url(https://ulumills.github.io/wp-content/uploads/2019/12/Asset-4-r.png), auto");
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("menuContainer").style.top = "0px";
+        } else {
+            document.getElementById("menuContainer").style.top = "-70px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+    $('#menuContainer').hover(function(){
+        document.getElementById("menuContainer").style.top = "0px";
+
+});
+
+
+
+
+    if ($(window).width() >= 768) {
+
+        //Set up "gone" classes appropriately first
+        $('.split:first-of-type, :not(.split) + .split').each(function(){
+            //        $(this).nextUntil(':not(.split)').each(function(){
+            $(this).find('.boxl')
+                .addClass("appear");
+            //        });
+        });
+
+        //Now the scroll functions
+        $( window ).scroll(function() {
+            $('.split:first-of-type, :not(.split) + .split').each(function(){
+
+
+                //When 1st split reaches top, add fixed on all box l of split: FUNCTIONS PROPERLY
+                var topOfBox = $(this).offset().top;
+                if($(window).scrollTop() >= topOfBox) {
+                    $(this).prev().nextUntil(':not(.split)').each(function(){
+                        $(this).find('.boxl')
+                            .addClass("fixed");
+                        $(this).find('.boxr')
+                            .addClass("boxrModified");
+                    });
+                }
+
+
+
+                //                fixed
+                //                When last of group's bottom is in view, remove fixed class from all .boxls
+
+
+
+                lastBoxr = $(this).prev().nextUntil(':not(.split)').last().find(".boxr");
+                // lastBoxr.css("min-height", "100vh");
+                //
+                // if ($(window).scrollTop() >=
+                //     ($(lastBoxr).offset().top +
+                //     $(lastBoxr).outerHeight() -
+                //     window.innerHeight)) {
+
+
+
+                // var windowHeight = $(window).height();
+                // var unfixTrigger = windowHeight;
+                var lastTop = $(lastBoxr).offset().top - $(window).scrollTop();
+                    lastBottom = lastTop + $(this).outerHeight();
+
+
+
+                //Window Object
+                var win = $(window);
+                //Object to Check
+                obj = lastBoxr;
+                //the top Scroll Position in the page
+                var scrollPosition = win.scrollTop();
+                //the end of the visible area in the page, starting from the scroll position
+                var visibleArea = win.scrollTop() + win.height();
+                //the end of the object to check
+                var objEndPos = (obj.offset().top + obj.outerHeight());
+
+
+                // if (visibleArea >= objEndPos && scrollPosition <= objEndPos) {
+
+
+
+
+                if  (objEndPos <= visibleArea) {
+                    // $(this).nextUntil(':not(.split)').each(function(){
+                            $('.boxl')
+                            .removeClass("fixed");
+                        $('.boxr')
+                            .removeClass("boxrModified");
+
+
+                    // });
+                }
+
+                // }
+
+
+            });
+
+
+
+
+
+            //IT WORKS!!
+            var windowHeight = $(window).height(),
+                fadeTrigger = windowHeight * .5;
+            //when next split reaches 50%, crossfade boxl to that of next split--do with opacity and nextUntil?
+            $('.split').each(function(){
+                var thisTop = $(this).offset().top - $(window).scrollTop(),
+                    thisBottom = thisTop + $(this).height();
+
+
+
+                if (fadeTrigger >= thisBottom) {
+                    // console.log("trigger = " + fadeTrigger + ", bottom = " + thisBottom);
+                    //                $(this).prev().nextUntil(':not(.split)').each(function(){
+                    $(this).next().find('.boxl')
+                        .addClass("appear");
+                    //                    console.log(topOfBox + " bottom");
+
+                    //                });
+
+                }
+                else {
+                    $(this).next().find('.boxl')
+                        .removeClass('appear');
+                }
+            });
+
+        });
+
+    } else {
+        $(".boxl").addClass("appear");
+    }
+
+
+
+
+});
+
+
+
+
