@@ -20,17 +20,22 @@ a, a:hover, a:visited {color: inherit;text-decoration: none;}
 p a, p a:hover, p a:visited {color: initial;text-decoration: darkgrey underline;}
 .lead {font-size: 1.25rem;font-style: oblique;margin-bottom: 4rem;border-left: 1px solid black;padding: 0rem 0rem .25rem 1rem;}
 ::selection {background: greenyellow;}
-.menuu {color: white !important;background: black;padding: 8px;display: flex;justify-content: center;align-items: center;width: 90px;font-family: "Vulf Mono";font-weight: 600;font-style: italic;font-size: 1rem;line-height: 1.5;box-sizing: border-box;}
+.menuu {padding: 8px;display: flex;justify-content: center;align-items: center;width: 90px;font-family: "Vulf Mono";font-weight: 600;font-style: italic;font-size: 1rem;line-height: 1.5;box-sizing: border-box;background: url("https://ulumills.github.io/wp-content/uploads/2019/12/Site-logo-1.png");-webkit-background-size: cover;background-size: cover;z-index: 1000;}
+@media (max-width: 768px) {.menuu {background-color: black !important;background: url("https://ulumills.github.io/wp-content/uploads/2019/09/hamburger.svg");width: 64px;height: 64px;}}
 #menuContainer {display: flex;flex-direction: row;position: fixed;top: 0px;left: 16px;z-index: 1000000;height: 90px;transition: top .3s ease-in-out;}
 #menuContainer:hover .menuItemContainer {opacity: 1;transition: opacity .3s ease-in-out;}
 .menuItemContainer {position: relative;left: 0;height: 100%;box-sizing: border-box;opacity: 0;}
 .menu-item {background: #fafafa;padding-left: 8px;padding-right: 24px;height: 33.3333%;width: 90px;display: flex;align-items: center;box-sizing: border-box;}
 .menu-item:hover {background: gray;color: white;transition: 100ms ease-in-out;}
+@media (max-width: 768px) {.menuItemContainer {position: relative;left: -80px;top: 0;height: 33vh;width: 100vw;padding-left: 0;padding-top: 4rem;box-sizing: border-box;display: none;opacity: 0;box-shadow: 2px 2px;background: #fafafa;}
+	.menu-item {padding-left: 27px;height: 27%;width: 100%;}
+	#menuContainer:hover .menuItemContainer {display: block;}}
 .divider-line {display: block;width: 5rem;border-bottom: 1px solid white;margin: 1.75rem 0 2rem;}
 .frontPgContainer {display: flex;flex-direction: row;align-items: flex-end;}
 @media (max-width:768px) {.frontPgContainer {flex-direction: column;}}
 .frontPgModule {display: flex;flex-direction: column;justify-content: center;align-items: center;margin: 5vh 5vw;}
 .frontPgModule {height: 90vh;width: 90vw;}
+@media (max-width:768px) {.frontPgModule {}}
 .intro {background: repeating-linear-gradient(45deg,gray,gray 1px,transparent 1px,transparent 20px);cursor: url("https://ulumills.github.io/wp-content/uploads/2019/12/Asset-1.png"),auto;}
 .intro--black, .intro--black * {color: black;border-color: black;}
 .intro--white, .intro--white * {color: white;border-color: white;}
@@ -38,17 +43,19 @@ p a, p a:hover, p a:visited {color: initial;text-decoration: darkgrey underline;
 .link-wrap {text-decoration: inherit;}
 .project-details {width: 90vh;}
 .project-details {display: block;margin-top: calc(50vh - 300px);margin-left: 2rem;box-sizing: border-box;border-bottom: 5px solid black;}
-.project-name a:hover {text-decoration: #00c underline;}
+.project-name a:hover {text-decoration: #00c underline;text-underline-offset: 3px;}
 .project-image {display: block;height: 60%;background: #eee;z-index: -10;background-position: center;background-size: cover;}
 .project-name * {font-size: 1.75rem;margin-top: .5rem;line-height: 1.25;}
+@media (max-width: 768px) {.project-name * {font-size: 1.5rem;}
+	.project-image {height: 40vh;}}
 .project-intro {}
 .project-type * {margin-bottom: 1rem;}
-.tags * {background-color: #efefef;color: black !important;padding: 0 .5rem .25rem;line-height: 1;font-size: .85rem;text-transform: uppercase;transition: background-color .1s ease-in-out;}
+.tags {margin-top: .5rem;}
+.tags * {background-color: #efefef;color: black !important;padding: 0 .5rem .25rem;line-height: 2.5;font-size: .85rem;text-transform: uppercase;transition: background-color .1s ease-in-out;}
 .tags *:hover {background-color: #ddd;transition: background-color .3s ease-in-out;}
 @media screen and (max-width: 768px) {.project-details {width: 90%;margin: auto;margin-top: 3rem;padding: 1rem 0;}
 	.project-name {font-size: 2.5rem;}
-	.project-intro {font-size: 1rem;padding-top: 1rem;line-height: 1.2;}
-	span {display: block;width: 5rem;margin: 1.25rem 0 2rem;}}
+	.project-intro {font-size: 1rem;line-height: 1.2;}}
 @media (min-width:768px) {body {overflow-x: hidden;background: url("../images/bg.jpg") repeat top left;}
 	.scroll {position: fixed;bottom: 0;left: 0;}
 	.horizon {z-index: 1;width: 3000px;}
