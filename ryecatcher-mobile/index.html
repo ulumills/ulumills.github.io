@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" href="https://use.typekit.net/muh2ytn.css">
+		<script>
+		function trace(msg) {
+			function var_dump(arr, level) {
+				var dumped_text = "";
+				if (!level)
+					level = 0;
+
+				//The padding given at the beginning of the line.
+				var level_padding = "";
+				for ( var j = 0; j < level + 1; j++ )
+					level_padding += "    ";
+
+				if ( 'object' === typeof(arr) ) { //Array/Hashes/Objects
+					for ( var item in arr ) {
+						var value = arr[item];
+
+						if ( 'object' === typeof(value) ) { //If it is an array,
+							dumped_text += level_padding + "'" + item + "' ...\n";
+							dumped_text += var_dump(value, level + 1);
+						} else {
+							dumped_text += level_padding + "'" + item + "' => " + "(" + typeof(value) + ") \"" + value + "\"\n";
+						}
+					}
+				} else { //Stings/Chars/Numbers etc.
+					dumped_text = "(" + typeof(arr) + ") " + arr;
+					return dumped_text;
+				}
+				if ( 0 === level ) {
+					return '(object)' + String.fromCharCode(10) + dumped_text;
+				} else {
+					return dumped_text;
+				}
+			}
+			trace.trace_queue.push(var_dump(msg));
+		}
+		trace.trace_queue = []; // Don't pollute global namespace
+
+		// Try to keep order of operations by transmitting via queue
+		setInterval(function() {
+			if (0 === trace.trace_queue.length )
+				return;
+			var msg = trace.trace_queue.shift();
+
+			// Transmit message via XHR
+			var xmlhttp;
+			if ( window.XMLHttpRequest ) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp = new ActiveXObject( "Microsoft.XMLHTTP" );
+			}
+			var addy = window.location.toString();
+			var url = trace.getLeftMost( addy, "//" ) + "//";
+			url += trace.getLeftMost( trace.delLeftMost( addy + "/", "//"), "/") + "/ds-plugins/debug-trace/debug-trace.php";
+			xmlhttp.open( "GET", url + "?m=" + encodeURIComponent( msg.toString().substring( 0, 2000 ) ), true );
+			xmlhttp.send();
+		}, 50);
+
+		// Utility parsing functions in trace namespace
+		trace.delLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf(sFind, i);
+				if ( -1 !== f ) {
+					return sSource.substr( f + sFind.length, sSource.length );
+					break;
+				}
+			}
+			return sSource;
+		};
+		trace.getLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf( sFind, i );
+				if ( -1 !== f ) {
+					return sSource.substr( 0, f );
+					break;
+				}
+			}
+			return sSource;
+		};
+	</script>
+<title>Student tracking on-the-go for busy teachers – ULU • p o r t f o l i o</title>
+
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://ulumills.github.io/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ulu_port2-style-css" href="https://ulumills.github.io/wp-content/themes/ulu_port2/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="style_custom-css" href="https://ulumills.github.io/wp-content/themes/ulu_port2/style_custom.css" type="text/css" media="all">
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port2/js/main.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port2/js/jInvertScroll/dist/js/jquery.jInvertScroll.js"></script>
+
+
+
+
+
+
+
+
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style></head>
+
+<body class="post-template-default single single-post postid-43 single-format-standard">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header">
+		<div class="site-branding">
+			
+				
+				
+		</div>
+
+
+
+
+        <div id="menuContainer">
+
+            <div class="menuu"> </div>
+	            <ul id="primary-menu" class="menuItemContainer"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-23"><a href="https://ulumills.github.io/">Work</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://ulumills.github.io/writing/">Writing</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://ulumills.github.io/about/">About</a></li>
+</ul>        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</header>
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area fade-out">
+        <script>document.body.className += ' fade-out';</script>
+		<main id="main" class="site-main">
+
+		<div class="hero-caption">
+
+            </div>
+
+            
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://ulumills.github.io/wp-content/uploads/2019/07/ryecatcher-1024x747.jpg" alt="" class="wp-image-243" srcset="https://ulumills.github.io/wp-content/uploads/2019/07/ryecatcher-1024x747.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/07/ryecatcher-300x219.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/07/ryecatcher-768x560.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h1><strong>Student tracking on-the-go for busy teachers</strong></h1>
+
+
+
+<h3>Client</h3>
+
+
+
+<p>RyeCatcher Education</p>
+
+
+
+<h3>Brief</h3>
+
+
+
+<p>RyeCatcher serves as a tool to connect students with local support providers, and facilitates tracking and monitoring student progress over time. RyeCatcher would like to explore possibilities for a mobile application that presents a subset of functionality from the existing web platform. </p>
+
+
+
+<h3>Team</h3>
+
+
+
+<p><a rel="noreferrer noopener" href="https://www.joshlefevre.com/" target="_blank">Josh LeFevre</a>, <a rel="noreferrer noopener" href="https://www.linkedin.com/in/vanessacalderon" target="_blank">Vanessa Calderon</a>, <a rel="noreferrer noopener" href="https://www.levyraphael.com/" target="_blank">Raphael Levy</a><br>& myself</p>
+
+
+
+<h3>Key Contributions</h3>
+
+
+
+<p>Research protocol<br>Consistency check<br>Design of home page, feed, and navigation<br>High-fidelity mockups<br>Icon design </p>
+
+
+
+<h3>Time Frame</h3>
+
+
+
+<p>4.5 Weeks</p>
+
+
+
+<h3>Tools & Methods</h3>
+
+
+
+<p>Illustrator<br>Adobe XD</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width hmw"><div class="wp-block-group__inner-container">
+<h1>How might we help educators track student behavior in real time?</h1>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container"></div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Design Imperatives</h3>
+
+
+
+<p>With consideration for the client and users, we developed four imperatives for our solution early on:</p>
+
+
+
+<p><strong>1. Provide means for anticipation.</strong> If teachers can get information about students before they see them, they can avoid incidents and trauma caused by misunderstandings.</p>
+
+
+
+<p><strong>2. Help teachers take action in real time.</strong> Teachers juggle many different hats, and often don’t have the time to fully document incidents. The faster and simpler we can make this process, the more accurate and useful the documentation will be.</p>
+
+
+
+<p><strong>3. Avoid information overload. </strong>“Some users have to deal with 40 kids at a time,” as one user put it. Our solution wll be most effective if it helps them to parse which information is most important first.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-hifi-1024x261.png" alt="" class="wp-image-314" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-hifi-1024x261.png 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-hifi-300x76.png 300w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-hifi-768x196.png 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-og-website-765x1024.png" alt="" class="wp-image-250" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-og-website-765x1024.png 765w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-og-website-224x300.png 224w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-og-website-768x1028.png 768w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-og-website.png 1182w" sizes="(max-width: 765px) 100vw, 765px"></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h2>Our Process</h2>
+
+
+
+<h3>Primary Research</h3>
+
+
+
+<p>We began by spending time with RyeCatcher’s desktop version, taking note of existing interactions on each page. We created site maps, user flows, and a feature matrix to understand how a user moves through the tool when completing a task. </p>
+
+
+
+<p>The client also provided us a list of tasks that the user should be able to complete in the mobile version. We evaluated which would be most important in a mobile setting, and shared notes and rankings in our feature matrix.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large is-resized"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/aarthi.png" alt="" class="wp-image-251" width="436" height="484" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/aarthi.png 872w,https://ulumills.github.io/wp-content/uploads/2019/08/aarthi-270x300.png 270w,https://ulumills.github.io/wp-content/uploads/2019/08/aarthi-768x853.png 768w" sizes="(max-width: 436px) 100vw, 436px"></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Stakeholder Interviews</h3>
+
+
+
+<p>We then had a chance to speak with RyeCatcher CEO Arthi Krishnaswami and Director of Growth and Partnerships Steven Lam, who acted as user proxies thanks to their deep familiarity with user ehavior. We asked them questions based on what we observed with the current platform to get a better sense of what users needed out of a mobile app.<br></p>
+
+
+
+<p><strong>From them, we learned of two larger buckets of users:</strong></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/80-1.png" alt="" class="wp-image-264" width="60" height="63"></figure></div>
+
+
+
+<p class="has-text-align-center has-normal-font-size"><strong>The 80%</strong></p>
+
+
+
+<p>Teachers and other staff who are noting student behavior in real time. These users frequently rely on analog methods of documentation before inputting behavior notes when they get a spare moment.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/20-1.png" alt="" class="wp-image-263" width="60" height="63"></figure></div>
+
+
+
+<p class="has-text-align-center has-normal-font-size"><strong>The 20%</strong></p>
+
+
+
+<p>Administrators and counselors looking for more in-depth analyses of student behavior. Although these users spend less time interacting with RyeCatcher, they have longer sessions and utilize more of the features.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard-1024x301.jpg" alt="" class="wp-image-272" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard-1024x301.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard-300x88.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard-768x226.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Research Synthesis</h3>
+
+
+
+<p>We then compared our internal conversations with those stakeholder interviews, and discussed our individual roles and objectives in designing the app.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-gallery columns-2 is-cropped"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img src="https://ulumills.github.io/wp-content/uploads/2019/08/scen1-1024x766.jpg" alt="" data-id="275" data-full-url="https://ulumills.github.io/wp-content/uploads/2019/08/scen1.jpg" data-link="https://ulumills.github.io/?attachment_id=275" class="wp-image-275" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/scen1-1024x766.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/scen1-300x224.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/scen1-768x574.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="blocks-gallery-item"><figure><img src="https://ulumills.github.io/wp-content/uploads/2019/08/scen4-1024x766.jpg" alt="" data-id="276" data-full-url="https://ulumills.github.io/wp-content/uploads/2019/08/scen4.jpg" data-link="https://ulumills.github.io/?attachment_id=276" class="wp-image-276" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/scen4-1024x766.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/scen4-300x224.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/scen4-768x574.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="blocks-gallery-item"><figure><img src="https://ulumills.github.io/wp-content/uploads/2019/08/scen3-1024x766.jpg" alt="" data-id="277" data-full-url="https://ulumills.github.io/wp-content/uploads/2019/08/scen3.jpg" data-link="https://ulumills.github.io/?attachment_id=277" class="wp-image-277" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/scen3-1024x766.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/scen3-300x224.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/scen3-768x574.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="blocks-gallery-item"><figure><img src="https://ulumills.github.io/wp-content/uploads/2019/08/scen2-1024x766.jpg" alt="" data-id="278" data-full-url="https://ulumills.github.io/wp-content/uploads/2019/08/scen2.jpg" data-link="https://ulumills.github.io/?attachment_id=278" class="wp-image-278" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/scen2-1024x766.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/scen2-300x224.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/scen2-768x574.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li></ul></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Scenarios</h3>
+
+
+
+<p>To get a better sense of how RyeCatcher Mobile might really be used, we developed five diverse use case scenarios, and presented them to one another for critique and refinement. From them, we developed some important questions for our user sessions.</p>
+
+
+
+<h4>Key Discoveries</h4>
+
+
+
+<p>• The notes are not just for record-keeping; by publishing them in real time, other teachers may see them and act appropriately with students concerned when they encounter them.</p>
+
+
+
+<p>• There is potential value in bringing highly active students to the front of view automatically, thus preventing teachers from having to rely on scrolling and searching.</p>
+
+
+
+<p>• Outside of the app itself, push notifications could be valuable for keeping teachers on schedule.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large grayscale"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard2-1024x520.jpg" alt="" class="wp-image-280" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard2-1024x520.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard2-300x152.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard2-768x390.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Concept Generation</h3>
+
+
+
+<p>At this point, we divided our efforts in wireframing, each taking a set of pages to focus on and planning to make similar features consistent across pages later. My primary domain was the landing page, navigation bar, and feed. Once our individual work was complete, I coordinated with teammates to make sure our pages shared a common design language.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large is-resized"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-testing-1024x1024.jpg" alt="" class="wp-image-281" width="512" height="512" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-testing-1024x1024.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-testing-150x150.jpg 150w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-testing-300x300.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-testing-768x768.jpg 768w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-testing.jpg 1113w" sizes="(max-width: 512px) 100vw, 512px"></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<p>We then prepared and conducted two extensive user testing sessions, the insights from which contributed to our final iterations. In preparation for these sessions, we tried a role-playing exercise. </p>
+
+
+
+<p>The intention was to get an accurate time and adjust questions, but we instead discovered a useful research activity: by embodying a user persona, we generated an important discussion about what was discoverable about our product. </p>
+
+
+
+<p>We used the outcomes of our role-played user session to fuel assumptions to test in our actual user session.</p>
+
+
+
+<p>The user session was then efficiently conducted and very valuable. We presented our findings to the client, who clarified our insights by highlighting overall trends among the broader user base.</p>
+
+
+
+<p><a href="https://drive.google.com/file/d/1nAxkdIVRc7uVa_DtgOsplsFTgwVqWxn_/view?usp=sharing" target="_blank" rel="noreferrer noopener">Click here to view our research presentation.</a></p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard-3-1024x644.jpg" alt="" class="wp-image-288" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard-3-1024x644.jpg 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard-3-300x189.jpg 300w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-whiteboard-3-768x483.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-style-tile-1024x768.png" alt="" class="wp-image-319" srcset="https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-style-tile-1024x768.png 1024w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-style-tile-300x225.png 300w,https://ulumills.github.io/wp-content/uploads/2019/08/ryecatcher-style-tile-768x576.png 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Refinement</h3>
+
+
+
+<p><a href="https://drive.google.com/open?id=1VqXSeby4KArY1FfJCIYOIU616frEKRDH" target="_blank" rel="noreferrer noopener">Click here to view our final presentation.</a></p>
+
+
+
+<h4>Final Wireframes</h4>
+
+
+
+<p>Our final product is feature rich for the 20%, but kept these features secondary in discovery, so that our 80% users could efficiently accomplish their tasks.</p>
+
+
+
+<p><a target="_blank" href="https://drive.google.com/open?id=1gswBFVcvxToahU6kfRZDztqfavDPVBcZ" rel="noreferrer noopener">Click here to view our full annotated wireframes.</a></p>
+
+
+
+<p>After exploring many potential color palettes, we eventually came back to a bold green, as we felt that the purpose of RyeCatcher was to promote growth and nourishment for students.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container"></div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h2>Reflections</h2>
+
+
+
+<h3>What was helpful</h3>
+
+
+
+<p>The process of doing a research protocol roleplay was surprisingly effective. In particular, it was useful for testing a scenario we hadn’t yet considered, and revealed new problems that we were able to address prior to our precious time with users.</p>
+
+
+
+<h3>What has the most potential</h3>
+
+
+
+<p>The client seemed particularly intrigued with the added bookmarking function, and wondered about ways this could be incorporated into a way to follow specific students.</p>
+
+
+
+<h3>The key takeaways</h3>
+
+
+
+<p>Overall, our process as a team went smoothly, but as this was our first deep dive into UX for screens, we got ambitious and spread ourselves thin by incorporating several new features. In reality, we probably would have rolled these out more slowly in order to test and refine each.</p>
+
+
+
+<h3>Given more time…</h3>
+
+
+
+<p>Given the number of functionalities we added that don’t currently live on the platform, we’d have to see how well they’d work with RyeCatcher’s recently updated backend framework. We’d also like to see what potential push notifications and integration into other schedule management apps might have, and how they could be implemented effectively.</p>
+</div></div>
+</div></div>
+
+		</main>
+	</div>
+
+</div></div></body></html>

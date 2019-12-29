@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" href="https://use.typekit.net/muh2ytn.css">
+		<script>
+		function trace(msg) {
+			function var_dump(arr, level) {
+				var dumped_text = "";
+				if (!level)
+					level = 0;
+
+				//The padding given at the beginning of the line.
+				var level_padding = "";
+				for ( var j = 0; j < level + 1; j++ )
+					level_padding += "    ";
+
+				if ( 'object' === typeof(arr) ) { //Array/Hashes/Objects
+					for ( var item in arr ) {
+						var value = arr[item];
+
+						if ( 'object' === typeof(value) ) { //If it is an array,
+							dumped_text += level_padding + "'" + item + "' ...\n";
+							dumped_text += var_dump(value, level + 1);
+						} else {
+							dumped_text += level_padding + "'" + item + "' => " + "(" + typeof(value) + ") \"" + value + "\"\n";
+						}
+					}
+				} else { //Stings/Chars/Numbers etc.
+					dumped_text = "(" + typeof(arr) + ") " + arr;
+					return dumped_text;
+				}
+				if ( 0 === level ) {
+					return '(object)' + String.fromCharCode(10) + dumped_text;
+				} else {
+					return dumped_text;
+				}
+			}
+			trace.trace_queue.push(var_dump(msg));
+		}
+		trace.trace_queue = []; // Don't pollute global namespace
+
+		// Try to keep order of operations by transmitting via queue
+		setInterval(function() {
+			if (0 === trace.trace_queue.length )
+				return;
+			var msg = trace.trace_queue.shift();
+
+			// Transmit message via XHR
+			var xmlhttp;
+			if ( window.XMLHttpRequest ) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp = new ActiveXObject( "Microsoft.XMLHTTP" );
+			}
+			var addy = window.location.toString();
+			var url = trace.getLeftMost( addy, "//" ) + "//";
+			url += trace.getLeftMost( trace.delLeftMost( addy + "/", "//"), "/") + "/ds-plugins/debug-trace/debug-trace.php";
+			xmlhttp.open( "GET", url + "?m=" + encodeURIComponent( msg.toString().substring( 0, 2000 ) ), true );
+			xmlhttp.send();
+		}, 50);
+
+		// Utility parsing functions in trace namespace
+		trace.delLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf(sFind, i);
+				if ( -1 !== f ) {
+					return sSource.substr( f + sFind.length, sSource.length );
+					break;
+				}
+			}
+			return sSource;
+		};
+		trace.getLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf( sFind, i );
+				if ( -1 !== f ) {
+					return sSource.substr( 0, f );
+					break;
+				}
+			}
+			return sSource;
+		};
+	</script>
+<title>A new way to learn classroom management – ULU • p o r t f o l i o</title>
+
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://ulumills.github.io/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ulu_port2-style-css" href="https://ulumills.github.io/wp-content/themes/ulu_port2/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="style_custom-css" href="https://ulumills.github.io/wp-content/themes/ulu_port2/style_custom.css" type="text/css" media="all">
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port2/js/main.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port2/js/jInvertScroll/dist/js/jquery.jInvertScroll.js"></script>
+
+
+
+
+
+
+
+
+
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style></head>
+
+<body class="post-template-default single single-post postid-468 single-format-standard">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header">
+		<div class="site-branding">
+			
+				
+				
+		</div>
+
+
+
+
+        <div id="menuContainer">
+
+            <div class="menuu"> </div>
+	            <ul id="primary-menu" class="menuItemContainer"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-23"><a href="https://ulumills.github.io/">Work</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://ulumills.github.io/writing/">Writing</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://ulumills.github.io/about/">About</a></li>
+</ul>        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</header>
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area fade-out">
+        <script>document.body.className += ' fade-out';</script>
+		<main id="main" class="site-main">
+
+		<div class="hero-caption">
+
+            </div>
+
+            
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49288915442_c51692ad40_h.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h1>A new way to learn classroom management</h1>
+
+
+
+<div style="height:72px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p class="lead"><strong>LURN</strong> is an <a href="https://seriousplayconf.com/2019-award-winners/">award-winning</a> collaborative board game developed for teachers-in-training to simulate critical classroom moments in a safe space, enabling them to practice and discuss how best to handle challenges involving students, and react quickly and appropriately once in the classroom. </p>
+
+
+
+<div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h4>Context</h4>
+
+
+
+<p>Developed for Design of Educational Games at Carnegie Mellon University</p>
+
+
+
+<h4>Brief</h4>
+
+
+
+<p>Combine processes and principles from game design and instructional design to create a game that is both enjoyable and educational.</p>
+
+
+
+<h4>Team</h4>
+
+
+
+<p><a href="https://www.linkedin.com/in/rogerstrang">Roger Strang</a> (research and testing), <a href="https://www.laurarodriguez.co/">Laura Rodriguez</a> (visual and character design) and myself (gameplay design)</p>
+
+
+
+<h4>Timeline</h4>
+
+
+
+<p>Twelve Weeks</p>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width hmw"><div class="wp-block-group__inner-container">
+<h1>How might we help new teachers learn critical classroom management skills in a safe environment?</h1>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffdgatlanta.com%2Fwp-content%2Fuploads%2F2012%2F10%2Fkennesaw-mountain-10.png&f=1&nofb=1" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>The Challenge</h3>
+
+
+
+<p>Some things can only be learned through experience. One of those things is <strong>classroom management</strong> — a teacher’s ability to act as facilitator, disciplinarian, counselor and confidante at a moment’s notice. Classroom management is one of the most impactful factors in students’ ability to learn—it ensures that students stay actively engaged, minimizes disruption to other students, sets repeatable norms and establishes positive rapport between students and teachers. </p>
+
+
+
+<p>Missteps in classroom management are nearly unavoidable for new teachers, but can impact students in ways that are difficult to reverse.</p>
+
+
+
+<p>Or as veteran teacher Freida Griffin puts it: “If you don’t have classroom management you can’t teach.” </p>
+
+
+
+<div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h4><strong>The teacher training issue</strong></h4>
+
+
+
+<p>Classroom dynamics are extremely multifaceted and contextual, and classroom chemistry is hard to predict. Students might carry baggage from previous interactions, or be completely unaccustomed to one another. </p>
+
+
+
+<p>Factors like these simply can’t easily be conveyed through advice outside of a realistic context.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49288307218_75231c90ed.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>The outcome</h3>
+
+
+
+<p>LURN is a board game designed to simulate a classroom environment in a workshop setting, to allow pre-service teachers to slow down and discuss their reactions, thinking fast and slow, and make the best decisions for their students.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49288398238_001e54c488_h.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>Why use a game to teach classroom management?</h3>
+
+
+
+<div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p><strong>Authenticity</strong>: LURN is heavily based on the real-world experiences of dozens of teachers, and has been curated and tested by teachers to ensure its relevance to players.</p>
+
+
+
+<p><strong>Control</strong>: Thanks to games existing in a <em>semiotic domain</em>—a self-contained world with no real-world consequences—variables that would otherwise be unpredictable, such as time, can be adjusted to allow players to give significant thought to the issues presented.</p>
+
+
+
+<p><strong>Scaffolding</strong>: Players may adjust the difficulty of the game by starting with more or fewer initial points, or replacing situations with more challenging ones. This allows pre-service teachers to tailor the game to the challenges they can expect in their placement schools.</p>
+
+
+
+<p>…And, of course, when done correctly, games offer a more engaging learning experience.</p>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49288703701_e913dd85bc_b.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49291050586_c58959d618_b.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h2>How to play</h2>
+
+
+
+<p>Classroom management is a complex topic, where sometimes you have to weigh individual students’ needs, and other times where you have to resist and make objective decisions. Through the course of this game, players are faced with students and situations, and challenged to work with their peers to determine the best strategy for maintaining a positive rapport with your students. </p>
+
+
+
+<div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>1. Build a student</h3>
+
+
+
+<p>Student profiles are built by players revealing four trait cards, one each for <strong>personality, home life, in-class attitude, and a special factor,</strong> each of which have a measurable impact on their behavior at school. Once traits are revealed, a fifth card puts a face to the student, and players are encouraged to give them a name and discuss the implications of their traits.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49291066566_2b30956fc3_b.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>2. Reveal the Situation</h3>
+
+
+
+<p>The student who was just built then has an incident at school that would impact their or other students’ ability to learn. Players discuss how the student’s traits may have impacted his behavior, and choose a strategy to deal with it.</p>
+
+
+
+<p>Each player votes before the score is revealed.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49291072596_d1e814217c_b.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>3. Scoring</h3>
+
+
+
+<p>Players’ responses are scored based on how that individual student might respond to the action taken. </p>
+
+
+
+<p>An action deemed to be ideal is sometimes based on the student involved, but sometimes based on what is best for the class long-term.</p>
+
+
+
+<p>Points earned represent <strong>classroom rapport,</strong> which, when earned or lost, affects the stability of the classroom over time.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49288102243_d2d2567397_h.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<h3>Leveraging the EDGE Framework</h3>
+
+
+
+<p>The key to developing an educational game that balances education and fun is by ensuring that the learning objectives of the game, its design, and established learning principles all complement one another. To do this, we evaluated it using the EDGE framework developed by CMU researchers.</p>
+
+
+
+<h3><strong>Mechanics, Dynamics and Aesthetics</strong></h3>
+
+
+
+<p>The primary purpose of LURN is to elicit discussions among peers and mentors to prime learners for the factors they’ll have to consider when making in-the-moment decisions, and so our mechanics, dynamics and aesthetics center around giving metaphors in gameplay to the pressures a teacher will face, and our learning principles focus on self-guidance and discussion.</p>
+
+
+
+<p>The most interesting dynamic that results is with the student building step, which prompts learners to consider the whole person, but steer away from superficial features in forming opinions of students.</p>
+
+
+
+<h3><strong>Learning Principles</strong></h3>
+
+
+
+<p>This game fosters learning by providing feedback, utilizing relatable situations, and encouraging peer dialogue to encourage students to ask deep questions.</p>
+
+
+
+<h3>Learning Objectives</h3>
+
+
+
+<p>By playing this game, players will come away with better reactions to student incidents in a shorter time, and giving due consideration for both short- and long-viewed responses and the effects they elicit. Stated formally:</p>
+
+
+
+<p><strong>Short Term Responses:</strong> Teachers will be able to scale their reactions to student behaviors appropriately in a given context, taking into account the visibility, directness, and degree of sternness in their response (e.g. volume, language, body language).</p>
+
+
+
+<p><strong>Long Term Responses: </strong>Given a student incident, teachers will be able to identify and apply effective strategies for re-establishing broken routines/expectations, including considering the frequency with which a pre-standing issue is addressed.</p>
+</div></div>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49288916402_2bfcd5ca13_b.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large grayscale"><img src="https://live.staticflickr.com/65535/49288107618_9632b81de0_b.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h2>Our Process</h2>
+
+
+
+<h3>Exploratory Survey</h3>
+
+
+
+<p>Since we wanted to understand teachers’ experiences more fully we reached out to expert teachers and novice teachers alike through a survey. We gathered 17 unique responses.  From what the novices said, our insight was that in general, novices have very short-sighted responses to classroom incidents.  They focused more on dealing with an issue in the moment, rather than dealing with the root of the issue.  They would do things like yell at the students to make them stop talking or send students to the office for minor incidents.</p>
+
+
+
+<p>From this, we understood the breadth of scenarios teachers encounter in the classroom and the factors that influence them. There isn’t an established framework for classroom management, so we experimented to create our own classification systems. This was important to try to formalize so that it could be easily incorporated into a system for game mechanics.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large grayscale"><img src="https://live.staticflickr.com/65535/49288589656_72bf04f4c0_h.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Ideation and prototyping</h3>
+
+
+
+<p>We developed light concepts for three different gameplays, and dozens of possible game mechanics that could accompany them.</p>
+
+
+
+<p>Since classroom management is very broad, we considered several topics: creating rules in the classroom and dealing with specific issues (which is what we chose).</p>
+
+
+
+<p>The presence of feedback in the game was heavily considered throughout the prototyping process.  We decided to start without any feedback from the game because we thought that the players would learn from developing their own rationales.  In the first round of playtesting, we discovered that the players didn’t like this.</p>
+
+
+
+<p>Competitive vs. collaborative gameplay was considered.  We thought a competitive game would be more engaging, but collaborative could lead to better learning. In the end, the game was designed so that players could choose to play either competitively or collaboratively, but due to time constraints we only playtested the collaborative version.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large grayscale"><img src="https://live.staticflickr.com/65535/49288796882_5fadcc2ea7_h.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Playtesting</h3>
+
+
+
+<p>We conducted five playtesting sessions with different audiences. Early on, we tested the game with non-teachers to ensure that the rules and mechanics were clear, and later we focused on teachers-in-training, who could speak more to the effectiveness and realisticness of the student personae and incidents.</p>
+
+
+
+<p>One of the playtesters who was an administrator remarked that the student-trait cards didn’t fit together. When this happened, another player made up a student who made the four traits fit together. We saw this as a good outcome because it might teach administrators that students are more diverse than she previously thought.</p>
+
+
+
+<p>Early playtesters, despite not having been teachers, were very cognizant of answers that would embarrass students.  </p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large grayscale"><img src="https://live.staticflickr.com/65535/49288589126_89a9c2e895_h.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Evaluation of Learning</h3>
+
+
+
+<p>The primary basis of
+our content sourcing consists of anecdotes from current or retired teachers who
+have provided responses to our game. In the initial research phase, we asked
+teachers what classroom management tactics they have changed since being beginners,
+and we based our situations around those. </p>
+
+
+
+<p>Current teachers who have played our game have told us that it would be of particular use to newly admitted education students. However, because of the timing of our testing, none were available. Nonetheless, the pre-service teachers we tested with generated useful discussion when playing.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49288581746_b91335df9c_h.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Visual Direction</h3>
+
+
+
+<h4>Representation of Students</h4>
+
+
+
+<p>As we refined the design of the game, we went back-and-forth about how best to depict students. Ultimately, we decided on a non-human aesthetic, in part in order to establish a stronger fantasy element to the game, but more so to discourage stereotyping. Students are depicted in a lightly diverse manner.</p>
+
+
+
+<h4>Color Palette</h4>
+
+
+
+<p>Out of consideration our audience, we chose a color palette that would resonate with adults in a workshop setting.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49288916807_45eb00c434_b.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49291292387_cc6430d543_b.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h2>Legacy</h2>
+
+
+
+<h3>Serious Play Awards Gold Medal Winner</h3>
+
+
+
+<p>The LURN team was honored to receive a gold medal at the 2019 International Serious Play Conference.</p>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h3>Future Publishing</h3>
+
+
+
+<p>If you or anyone you know is interested in obtaining a copy of LURN, <a href="mailto:aloha@ulumills.com">please don’t hesitate to reach out</a>.</p>
+</div></div>
+</div></div>
+
+		</main>
+	</div>
+
+</div></div></body></html>
