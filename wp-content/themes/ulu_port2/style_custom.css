@@ -6,20 +6,21 @@ blockquote, q {quotes: none;}
 blockquote:before, blockquote:after, q:before, q:after {content: "";content: none;}
 table {border-collapse: collapse;border-spacing: 0;}
 button {-webkit-appearance: inherit;-webkit-writing-mode: horizontal-tb !important;text-rendering: inherit;color: buttontext;letter-spacing: normal;word-spacing: normal;text-transform: none;text-indent: 0px;text-shadow: none;display: inline-block;text-align: center;align-items: flex-start;cursor: default;background-color: none;box-sizing: border-box;margin: 0em;font: inherit;padding: 0;border: none;}
-body {opacity: 1;transition: 1s opacity;color: black;}
+body {opacity: 1;transition: 1s opacity;color: rgba(96,103,114,.75);}
 body.fade-out {opacity: 0;transition: none;}
 html, body {padding: 0;margin: 0;font-family: "obviously",sans-serif;}
 P {font-size: 1rem;line-height: 1.75;margin-bottom: 1.125rem;font-family: "obviously",sans-serif;font-weight: 400;font-style: normal;}
+h1, h2, h3, h4, h5, h6 {color: #222831;}
 h1 {font-size: 2.625rem;line-height: 1.2;font-weight: 700;margin-bottom: 1.25rem;}
 h2 {font-size: 2.125rem;line-height: 1.2;font-weight: 700;margin-bottom: 1.25rem;}
 h3 {font-size: 1.375rem;line-height: 1.5;margin-bottom: .75rem;font-weight: 600;}
-h4 {font-size: 1rem;line-height: 1.5;text-transform: uppercase;margin-top: 1rem;margin-bottom: .375rem;color: rgba(0,0,0,.4);}
-p strong {font-weight: 600;}
+h4 {font-size: 1rem;font-weight: 500;line-height: 1.5;text-transform: uppercase;margin-top: 1.5rem;margin-bottom: .375rem;}
+p strong {color: #222831;font-weight: inherit;}
 @media (max-width:768px) {h2 {font-size: 1.5rem;}}
 @media (max-width:768px) {h4 {font-size: .85rem;}}
-a, a:hover, a:visited {color: inherit;text-decoration: none;}
-p a, p a:hover, p a:visited {color: initial;text-decoration: darkgrey underline;}
-.lead {font-size: 1.25rem;font-style: oblique;margin-bottom: 4rem;border-left: 1px solid black;padding: 0rem 0rem .25rem 1rem;}
+a, a:hover, a:visited {color: #222831;text-decoration: none;}
+p a, p a:hover, p a:visited {color: #222831;text-decoration: underline;}
+.lead {font-size: 1.25rem;font-style: oblique;margin-bottom: 4rem;border-left: 1px solid #222831;padding: 0rem 0rem .25rem 1rem;}
 ::selection {background: greenyellow;}
 .menuu {padding: 8px;display: flex;justify-content: center;align-items: center;width: 90px;font-family: "Vulf Mono";font-weight: 600;font-style: italic;font-size: 1rem;line-height: 1.5;box-sizing: border-box;background: url("https://ulumills.github.io/wp-content/uploads/2019/12/Site-logo-1.png");-webkit-background-size: cover;background-size: cover;z-index: 1000;}
 @media (max-width: 768px) {.menuu {background-color: black !important;background: url("https://ulumills.github.io/wp-content/uploads/2019/09/hamburger.svg");width: 48px;height: 48px;}}
@@ -37,7 +38,7 @@ p a, p a:hover, p a:visited {color: initial;text-decoration: darkgrey underline;
 .frontPgModule {display: flex;flex-direction: column;justify-content: center;align-items: center;margin: 5vh 5vw;}
 .frontPgModule {height: 90vh;width: 90vw;}
 @media (max-width:768px) {.frontPgModule {}}
-.intro {background: repeating-linear-gradient(45deg,gray,gray 1px,transparent 1px,transparent 20px);cursor: url("https://ulumills.github.io/wp-content/uploads/2019/12/Asset-1.png"),auto;}
+.intro {background: repeating-linear-gradient(45deg,rgba(96,103,114,.35),rgba(96,103,114,.35) 1px,transparent 1px,transparent 20px);cursor: url("https://ulumills.github.io/wp-content/uploads/2019/12/Asset-1.png"),auto;}
 .intro--black, .intro--black * {color: black;border-color: black;}
 .intro--white, .intro--white * {color: white;border-color: white;}
 .intro h1, .intro p {background-color: white;padding: 1rem;max-width: 80vw;}
@@ -79,7 +80,7 @@ p a, p a:hover, p a:visited {color: initial;text-decoration: darkgrey underline;
 .full-image {padding: 2rem;flex-direction: column;}
 .grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
 .hmw {display: flex;align-items: center;justify-content: center;text-align: center;font-style: oblique;padding: 50px;box-sizing: border-box;}
-.hmw h1 {padding: 80px 0;box-sizing: border-box;border-bottom: 3px solid black;border-top: 3px solid black;}
+.hmw h1 {padding: 80px 0;box-sizing: border-box;border-bottom: 3px solid #222831;border-top: 3px solid #222831;}
 :not(.full-width).imagebox {background: #f5f6f7;display: flex;align-items: center;justify-content: center;padding: 2rem;}
 @media (max-width: 768px) {.imagebox {background: transparent;}}
 .imagebox img {max-height: 90vh;}
