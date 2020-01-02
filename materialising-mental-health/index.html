@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" href="https://use.typekit.net/muh2ytn.css">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114509519-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-114509519-1');
+    </script>
+		<script>
+		function trace(msg) {
+			function var_dump(arr, level) {
+				var dumped_text = "";
+				if (!level)
+					level = 0;
+
+				//The padding given at the beginning of the line.
+				var level_padding = "";
+				for ( var j = 0; j < level + 1; j++ )
+					level_padding += "    ";
+
+				if ( 'object' === typeof(arr) ) { //Array/Hashes/Objects
+					for ( var item in arr ) {
+						var value = arr[item];
+
+						if ( 'object' === typeof(value) ) { //If it is an array,
+							dumped_text += level_padding + "'" + item + "' ...\n";
+							dumped_text += var_dump(value, level + 1);
+						} else {
+							dumped_text += level_padding + "'" + item + "' => " + "(" + typeof(value) + ") \"" + value + "\"\n";
+						}
+					}
+				} else { //Stings/Chars/Numbers etc.
+					dumped_text = "(" + typeof(arr) + ") " + arr;
+					return dumped_text;
+				}
+				if ( 0 === level ) {
+					return '(object)' + String.fromCharCode(10) + dumped_text;
+				} else {
+					return dumped_text;
+				}
+			}
+			trace.trace_queue.push(var_dump(msg));
+		}
+		trace.trace_queue = []; // Don't pollute global namespace
+
+		// Try to keep order of operations by transmitting via queue
+		setInterval(function() {
+			if (0 === trace.trace_queue.length )
+				return;
+			var msg = trace.trace_queue.shift();
+
+			// Transmit message via XHR
+			var xmlhttp;
+			if ( window.XMLHttpRequest ) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp = new ActiveXObject( "Microsoft.XMLHTTP" );
+			}
+			var addy = window.location.toString();
+			var url = trace.getLeftMost( addy, "//" ) + "//";
+			url += trace.getLeftMost( trace.delLeftMost( addy + "/", "//"), "/") + "/ds-plugins/debug-trace/debug-trace.php";
+			xmlhttp.open( "GET", url + "?m=" + encodeURIComponent( msg.toString().substring( 0, 2000 ) ), true );
+			xmlhttp.send();
+		}, 50);
+
+		// Utility parsing functions in trace namespace
+		trace.delLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf(sFind, i);
+				if ( -1 !== f ) {
+					return sSource.substr( f + sFind.length, sSource.length );
+					break;
+				}
+			}
+			return sSource;
+		};
+		trace.getLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf( sFind, i );
+				if ( -1 !== f ) {
+					return sSource.substr( 0, f );
+					break;
+				}
+			}
+			return sSource;
+		};
+	</script>
+<title>Materialising Mental Health – ULU • p o r t f o l i o</title>
+
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://ulumills.github.io/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ulu_port2-style-css" href="https://ulumills.github.io/wp-content/themes/ulu_port2/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="style_custom-css" href="https://ulumills.github.io/wp-content/themes/ulu_port2/style_custom.css" type="text/css" media="all">
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port2/js/main.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port2/js/jInvertScroll/dist/js/jquery.jInvertScroll.js"></script>
+
+
+
+
+
+
+
+
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style></head>
+
+<body class="post-template-default single single-post postid-953 single-format-standard">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header">
+		<div class="site-branding">
+			
+				
+				
+		</div>
+
+
+
+
+        <div id="menuContainer">
+
+            <div class="menuu"> </div>
+	            <ul id="primary-menu" class="menuItemContainer"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-23"><a href="https://ulumills.github.io/">Work</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://ulumills.github.io/writing/">Writing</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://ulumills.github.io/about/">About</a></li>
+</ul>        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</header>
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area fade-out">
+        <script>document.body.className += ' fade-out';</script>
+		<main id="main" class="site-main">
+
+		<div class="hero-caption">
+
+            </div>
+
+            
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49314515382_ac5bd2255d_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h1>New Ways to Think: Materialising Mental Health</h1>
+
+
+
+<div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p class="lead">At a conference where artificial intelligence is top of mind for attendees, the Materialising Mental Health workshop served as a reminder that all technology starts with our humanity. <br><br>Our workshop, developed primarily out of a seven-week research-through-design project, affords participants a moment to look within and tangibly connect with their mental state, and speaks to researchers of the <s>value</s> necessity of qualitative observation.</p>
+
+
+
+<h4>Conference</h4>
+
+
+
+<p>Mozilla Festival<br>25-27 October 2019<br>London</p>
+
+
+
+<h4>Team</h4>
+
+
+
+<p>Jennifer Brown, Dr. Dan Lockton, and myself</p>
+
+
+
+<p>Featuring the work of Imaginaries Lab students and researchers</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49313930243_195d6d38fa_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<p></p>
+
+
+
+<h3>What happens at MozFest</h3>
+
+
+
+<p>At the tenth annual Mozilla Festival in London, the conversations were centered around the artificial intelligence, its role in shaping human life, and how we can work toward a more socially responsible AI future.</p>
+
+
+
+<p>MozFest facilitates conversations that connect people from vastly different backgrounds, all concerned with shaping the best possible digital future. What makes MozFest unique is its deep commitment to celebrating unique voices. </p>
+
+
+
+<p>This celebration is apparent in the way that the festival space was arranged—this year there were eight spaces with different themes, ranging from Digital Inclusion to Decentralisation to Queering. </p>
+
+
+
+<p>Our workshop took place in the Neurodiversity space, whose mission was to shed light on how the unique functioning of every human brain can contribute to a positive digital ecosystem.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49313940233_f4aa66ffc4_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Our Workshop</h3>
+
+
+
+<p>According to research compiled by the Welcome Trust (UK), “one in four people will experience a mental health problem in any given year,” and “75% of people with a mental health problem develop it before the age of 24.” </p>
+
+
+
+<p>Carnegie Mellon students, in common with many people in high-pressure environments, can experience a broad range of mental health issues. Yet as a society, we don’t always have good ways of talking about mental health.</p>
+
+
+
+<p>The four projects presented during the workshop were produced at the Imaginaries Lab at Carnegie Mellon, directed by Dan Lockton. Three of the projects, two of which were created by my team, were the culmination of a seven-week course called New Ways to Think: Materialising Mental Health.</p>
+
+
+
+<p>The course focused on exploring how we can adapt participatory design and facilitation methods, often used in user experience, service design, and working with communities, to a mental health context. We believe they have the potential to help people capture qualitative dimensions of their experiences, to make them palpable, to enable discussion, reflection, and peer support.</p>
+
+
+
+<p>Our initial focus was working within the Carnegie Mellon community, but at MozFest the methods proved to be of use more widely. The four projects shown work with different aspects of mental health, from anxiety and stress to loneliness, to enabling feelings that perhaps don’t have a name yet to be expressed and shared. </p>
+
+
+
+<p><a href="http://imaginari.es/wp-content/uploads/2019/12/MozFestMatrializingMentalHealth-Pgs.pdf">Download the program here.</a></p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49314511447_fa170cb56c_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Mental Landscapes</h3>
+
+
+
+<p>Created by Dan Lockton and Delanie Ricketts</p>
+
+
+
+<p>Landscapes are a common type of metaphor in speech, particularly for talking about relations between parts of a whole, or mapping the structure of one concept onto another. </p>
+
+
+
+<p>Mental Landscapes is a modeling toolkit and workshop format using landscape metaphors to enable people to externalize and share thinking about often abstract ideas such as our own thoughts about the future, our career paths, and group dynamics. </p>
+
+
+
+<p>We have developed the kit through workshops with students and at conferences, addressing a wide range of issues to evolve a collection of lasercut card parts representing stylized landscapes and features within landscapes, such as hills, roads, fields, trees, bridges, fences, and weather.</p>
+
+
+
+<p>In using the kit, participants—individually or in groups—construct model landscapes representing something about how they think about an issue, but the process itself (and reflection on it) is as important as the form of the resulting landscape. There are no wrong answers here. </p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49313807108_60f2a85fde_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49314514337_e1acd165ee_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Emotional Modeling</h3>
+
+
+
+<p>Created by Josh LeFevre, Arden Wolf, Laura Rodriguez, Nowell Kahle, and Katie Herzog</p>
+
+
+
+<p>The Emotional Modeling kit helps create a physical expression of an emotion. Using shapes to create a sculpture, we aim to make emotions more accessible.</p>
+
+
+
+<p>The kit includes a variety of 3-dimensional shapes in a range of colors and materials (including wood, felt, and concrete) that can be connected to form abstract sculptures. A constrained palette of materiality encourages intentionality in their shape and material choices. </p>
+
+
+
+<p>After building their models, participants who were comfortable doing so named their creations, and shared a little about the pieces they chose and shapes they formed. Photographs taken at the event allowed us to identify common themes.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49314514002_3c56c2650d_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49314514877_eaf5733d21_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Personalised Potions</h3>
+
+
+
+<p>Created by Michal Luria, Jen Brown, Supawat Vitoorapakorn, Carlie Guilfoile and myself</p>
+
+
+
+<p>During times of stress, it becomes challenging to take actionable steps to move out of a stressful state. To address this, we developed a lighthearted, facilitated interactive experience that allows participants to identify and process their stress through the creation of “personalized potions”:</p>
+
+
+
+<p>Participants receive a clear glass vial that they fill with ingredients (in the form of colored sugar), such as “compassion”, “trust”, and “discipline”, that will help them towards overcoming a personal challenge.</p>
+
+
+
+<p>The project is free-form and individualized in subject; participants can use the activity to address whatever aspect of their own mental health that they choose, however big or small. The goal is to give them an opportunity to express self-compassion, and to pause and reflect on what they need for their own well-being.</p>
+
+
+
+<p>At the end of the session, depletion levels of ingredients revealed the collective emotional state of all participants.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49313808153_6db0cb8707_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49314295261_0c38261df7_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Empathy Rock Garden</h3>
+
+
+
+<p>Created by Michal Luria, Jen Brown, Supawat Vitoorapakorn, Carlie Guilfoile and myself</p>
+
+
+
+<p>The Empathy Rock Garden project sets out to address a common feeling of being alone in your worries or anxiety. By allowing people the opportunity to quietly and anonymously express what is currently weighing on them, the garden creates a safe, intimate space to reflect, connect with others and express empathy. </p>
+
+
+
+<p>We encourage participants to first walk around the garden, and to think about other people’s anxieties while they reflect on their own, before taking a rock and sharing something that is weighing on their minds, or take a small rock, and place it near another one that is already on the surface as a symbol of empathic connection. Over time, as rocks collect, the garden becomes a collective emotional tapestry, representative of the unique people and circumstances in which the garden was installed.</p>
+
+
+
+<p>Initial rocks placed revealed heavy emotional tolls, but once a comical rock was placed, themes shifted from solemn to encouraging and hopeful.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49314295591_f1592a3e71_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49313799698_9849318c63_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49314295926_b8f51c23b8_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49313805993_7b5803d0d8_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group one-section"><div class="wp-block-group__inner-container">
+<figure class="wp-block-embed-twitter wp-block-embed is-type-rich is-provider-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">This is one on the most emotive n beautiful projects I discover today in <a href="https://twitter.com/hashtag/MozFest?src=hash&ref_src=twsrc%5Etfw">#MozFest</a> <br>Feelings can weight like rocks in your back when you're carrying alone.<a href="https://twitter.com/hashtag/Neurodiversity?src=hash&ref_src=twsrc%5Etfw">#Neurodiversity</a> <a href="https://t.co/PEvi0iQ54a">pic.twitter.com/PEvi0iQ54a</a></p>— Amanda Nest (@4mandapadilla) <a href="https://twitter.com/4mandapadilla/status/1188077021903147008?ref_src=twsrc%5Etfw">October 26, 2019</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed-twitter wp-block-embed is-type-rich is-provider-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">This is one of the coolest things I’ve ever seen at a tech conference. <a href="https://twitter.com/hashtag/mozfest?src=hash&ref_src=twsrc%5Etfw">#mozfest</a> <a href="https://t.co/Q1eGzMTGMd">pic.twitter.com/Q1eGzMTGMd</a></p>— Duane O'Brien (@DuaneOBrien) <a href="https://twitter.com/DuaneOBrien/status/1188103732329943040?ref_src=twsrc%5Etfw">October 26, 2019</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed-twitter wp-block-embed is-type-rich is-provider-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Mental wellbeing and creativity materialising mental health at <a href="https://twitter.com/hashtag/mozfest2019?src=hash&ref_src=twsrc%5Etfw">#mozfest2019</a> <a href="https://twitter.com/libsconnected?ref_src=twsrc%5Etfw">@libsconnected</a> <a href="https://t.co/qwK6wk1mcN">pic.twitter.com/qwK6wk1mcN</a></p>— The Innovation Lab (@ilabnetwork) <a href="https://twitter.com/ilabnetwork/status/1188044364838309888?ref_src=twsrc%5Etfw">October 26, 2019</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed-twitter wp-block-embed is-type-rich is-provider-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">so, I didn’t realise how much I needed the ‘Materialising Mental Health’ session at <a href="https://twitter.com/mozillafestival?ref_src=twsrc%5Etfw">@mozillafestival</a> thank you so much, I will definitely be replicating this somewhere 🌻 <a href="https://twitter.com/hashtag/MozFest?src=hash&ref_src=twsrc%5Etfw">#MozFest</a></p>— Tess Wandia (@tnwandia) <a href="https://twitter.com/tnwandia/status/1188046500653342723?ref_src=twsrc%5Etfw">October 26, 2019</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49314296361_ce3cc400f8_k.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Reception & Legacy</h3>
+
+
+
+<p></p>
+
+
+
+<p>Overall, the workshop and installation was very well received by attendees. Questions that arose generated valuable conversations around its relevance to technology and how data collected can be measured and applied.</p>
+
+
+
+<p>Using design methods in this kind of way can make a contribution to what might traditionally have been text- or interview-based forms of inquiry. In group settings, for example exploring neurodiversity or preferences for working styles within a team, as we are doing here at MozFest, surfacing which landscape elements are shared, or comfortable for, multiple group members—and which are not—and the discussion around these issues once surfaced, can give useful insights for researchers seeking to understand understanding, and for team members themselves. </p>
+
+
+
+<p>Thanks to interest in restaging parts of the workshop at other conferences, we are considering making instruction kits available in the near future. We are also submitting the story of this project to several journals and other publications. Stay tuned!</p>
+</div></div>
+</div></div>
+
+		</main>
+	</div>
+
+</div></div></body></html>

@@ -20,7 +20,7 @@ p strong {color: #222831;font-weight: inherit;}
 @media (max-width:768px) {h4 {font-size: .85rem;}}
 a, a:hover, a:visited {color: #222831;text-decoration: none;}
 p a, p a:hover, p a:visited {color: #222831;text-decoration: underline;}
-.lead {font-size: 1.25rem;font-style: oblique;margin-bottom: 4rem;border-left: 1px solid #222831;padding: 0rem 0rem .25rem 1rem;}
+.lead {font-size: 1.25rem;font-style: oblique;color: #222831;margin-bottom: 4rem;border-left: 1px solid #222831;padding: 0rem 0rem .25rem 1rem;}
 ::selection {background: greenyellow;}
 .menuu {padding: 8px;display: flex;justify-content: center;align-items: center;width: 90px;font-family: "Vulf Mono";font-weight: 600;font-style: italic;font-size: 1rem;line-height: 1.5;box-sizing: border-box;background: url("https://ulumills.github.io/wp-content/uploads/2019/12/Site-logo-1.png");-webkit-background-size: cover;background-size: cover;z-index: 1000;}
 @media (max-width: 768px) {.menuu {background-color: black !important;background: url("https://ulumills.github.io/wp-content/uploads/2019/09/hamburger.svg");width: 48px;height: 48px;}}
@@ -70,13 +70,13 @@ p a, p a:hover, p a:visited {color: #222831;text-decoration: underline;}
 .boxl > * {display: flex;flex-direction: column;justify-content: center;align-items: center;overflow: hidden;}
 .boxl:not(.imagebox) {padding: 0;}
 .boxl:not(.imagebox) figure {flex-shrink: 0;min-width: 100%;min-height: 100%;}
-.boxl:not(.imagebox) figure img {max-width: none;height: 102vh;}
+.boxl:not(.imagebox) figure img {max-width: none;height: 102vh;position: absolute;right: -9999px;left: -9999px;top: -9999px;bottom: -9999px;margin: auto;}
 .boxr {width: 40%;}
 .boxr {display: flex;flex-direction: column;justify-content: center;}
 @media (max-width:768px) {.boxl {position: initial;width: 100%;}
 	.boxr {width: 100%;}}
 @media (min-width:768px) {.boxl {height: 100vh;}
-	.boxr {min-height: 100vh;padding-right: 3rem;}}
+	.boxr {min-height: 100vh;padding-right: 4rem;}}
 .full-image {padding: 2rem;flex-direction: column;}
 .grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
 .hmw {display: flex;align-items: center;justify-content: center;text-align: center;font-style: oblique;padding: 50px;box-sizing: border-box;}
