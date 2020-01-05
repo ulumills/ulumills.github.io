@@ -37,12 +37,13 @@ jQuery(document).ready(function($) {
     $('#menuContainer').hover(function(){
         document.getElementById("menuContainer").style.top = "0px";
 
-});
+    });
 
 
 
 
     if ($(window).width() >= 768) {
+
 
         //Set up "gone" classes appropriately first
         $('.split:first-of-type, :not(.split) + .split').each(function(){
@@ -88,7 +89,7 @@ jQuery(document).ready(function($) {
                 // var windowHeight = $(window).height();
                 // var unfixTrigger = windowHeight;
                 var lastTop = $(lastBoxr).offset().top - $(window).scrollTop();
-                    lastBottom = lastTop + $(this).outerHeight();
+                lastBottom = lastTop + $(this).outerHeight();
 
 
 
@@ -111,10 +112,10 @@ jQuery(document).ready(function($) {
 
                 if  (objEndPos <= visibleArea) {
                     // $(this).nextUntil(':not(.split)').each(function(){
-                            $('.boxl')
-                            .removeClass("fixed");
-                        $('.boxr')
-                            .removeClass("boxrModified");
+                    $('.boxl')
+                        .removeClass("fixed");
+                    $('.boxr')
+                        .removeClass("boxrModified");
 
 
                     // });
@@ -161,11 +162,19 @@ jQuery(document).ready(function($) {
         $(".boxl").addClass("appear");
     }
 
+if (($("#mode")).hasClass("dark")) {
+    $("body").addClass("darkbg darktext");
+    $("h1,h2,h3,h4,h5,h6,.lead, :not(.menu-item)>a, strong").addClass("darkheader");
+    $(":not(.full-width).imagebox").addClass("darkimg");
+}
 
+
+// This makes the cursor on zoom and opens all external links in a new tab
+$(".zoooom a").css("cursor", "zoom-in");
+    $('a[href^="https://"]').not('a[href*=ulumills]').attr('target','_blank');
+    $('a[href^="http://"]').not('a[href*=ulumills]').attr('target','_blank');
 
 
 });
-
-
 
 

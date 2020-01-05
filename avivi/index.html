@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" href="https://use.typekit.net/muh2ytn.css">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114509519-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-114509519-1');
+    </script>
+		<script>
+		function trace(msg) {
+			function var_dump(arr, level) {
+				var dumped_text = "";
+				if (!level)
+					level = 0;
+
+				//The padding given at the beginning of the line.
+				var level_padding = "";
+				for ( var j = 0; j < level + 1; j++ )
+					level_padding += "    ";
+
+				if ( 'object' === typeof(arr) ) { //Array/Hashes/Objects
+					for ( var item in arr ) {
+						var value = arr[item];
+
+						if ( 'object' === typeof(value) ) { //If it is an array,
+							dumped_text += level_padding + "'" + item + "' ...\n";
+							dumped_text += var_dump(value, level + 1);
+						} else {
+							dumped_text += level_padding + "'" + item + "' => " + "(" + typeof(value) + ") \"" + value + "\"\n";
+						}
+					}
+				} else { //Stings/Chars/Numbers etc.
+					dumped_text = "(" + typeof(arr) + ") " + arr;
+					return dumped_text;
+				}
+				if ( 0 === level ) {
+					return '(object)' + String.fromCharCode(10) + dumped_text;
+				} else {
+					return dumped_text;
+				}
+			}
+			trace.trace_queue.push(var_dump(msg));
+		}
+		trace.trace_queue = []; // Don't pollute global namespace
+
+		// Try to keep order of operations by transmitting via queue
+		setInterval(function() {
+			if (0 === trace.trace_queue.length )
+				return;
+			var msg = trace.trace_queue.shift();
+
+			// Transmit message via XHR
+			var xmlhttp;
+			if ( window.XMLHttpRequest ) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp = new ActiveXObject( "Microsoft.XMLHTTP" );
+			}
+			var addy = window.location.toString();
+			var url = trace.getLeftMost( addy, "//" ) + "//";
+			url += trace.getLeftMost( trace.delLeftMost( addy + "/", "//"), "/") + "/ds-plugins/debug-trace/debug-trace.php";
+			xmlhttp.open( "GET", url + "?m=" + encodeURIComponent( msg.toString().substring( 0, 2000 ) ), true );
+			xmlhttp.send();
+		}, 50);
+
+		// Utility parsing functions in trace namespace
+		trace.delLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf(sFind, i);
+				if ( -1 !== f ) {
+					return sSource.substr( f + sFind.length, sSource.length );
+					break;
+				}
+			}
+			return sSource;
+		};
+		trace.getLeftMost = function( sSource, sFind ) {
+			for ( var i = 0; i < sSource.length; i = i + 1 ) {
+				var f = sSource.indexOf( sFind, i );
+				if ( -1 !== f ) {
+					return sSource.substr( 0, f );
+					break;
+				}
+			}
+			return sSource;
+		};
+	</script>
+<title>The future of accessible transportation – ULU • p o r t f o l i o</title>
+
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://ulumills.github.io/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ulu_port2-style-css" href="https://ulumills.github.io/wp-content/themes/ulu_port2/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="style_custom-css" href="https://ulumills.github.io/wp-content/themes/ulu_port2/style_custom.css" type="text/css" media="all">
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port2/js/main.js"></script>
+<script type="text/javascript" src="https://ulumills.github.io/wp-content/themes/ulu_port2/js/jInvertScroll/dist/js/jquery.jInvertScroll.js"></script>
+
+
+
+
+
+
+
+
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style></head>
+
+<body class="post-template-default single single-post postid-36 single-format-standard">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header">
+		<div class="site-branding">
+			
+				
+				
+		</div>
+
+
+
+
+        <div id="menuContainer">
+
+            <div class="menuu"> </div>
+	            <ul id="primary-menu" class="menuItemContainer"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-23"><a href="https://ulumills.github.io/">Work</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://ulumills.github.io/writing/">Writing</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://ulumills.github.io/about/">About</a></li>
+</ul>        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</header>
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area fade-out">
+        <script>document.body.className += ' fade-out';</script>
+		<main id="main" class="site-main">
+
+					
+            <div id="mode" class="light">
+            </div>
+
+            
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://ulumills.github.io/wp-content/uploads/2019/07/Avivi_hero-1024x683.png" alt="" class="wp-image-37" srcset="https://ulumills.github.io/wp-content/uploads/2019/07/Avivi_hero-1024x683.png 1024w,https://ulumills.github.io/wp-content/uploads/2019/07/Avivi_hero-300x200.png 300w,https://ulumills.github.io/wp-content/uploads/2019/07/Avivi_hero-768x512.png 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h1><strong>The future of accessible transportation</strong></h1>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p class="lead">Autonomous vehicle technology is a reality of our future, and one that inspires a range of excitement and apprehension among the general public. And rightfully so—such a monumental change to our daily lives is sure to affect it in ways both positive and adverse.<br><br>Avivi is a service that aims to direct this innovation towards making lives better for those disconnected from major transit arteries, thus leveraging it to do the most good. In this seven-week exploration, we developed the seeds of a service that brings autonomous vehicles to the public in a way that is sustainable, affordable, and dependable.</p>
+
+
+
+<h4>COURSE</h4>
+
+
+
+<p>MA Interaction Design Studio<br>Spring 2018 at Carnegie Mellon University</p>
+
+
+
+<h4>BRIEF</h4>
+
+
+
+<p>Design a project ecosystem that extends beyond the screen. Your solution must include multiple touchpoints across multiple channels, and these components must work together in supporting a user or community of users as they attempt to achieve some practical goal.</p>
+
+
+
+<h4>Team</h4>
+
+
+
+<p><a rel="noreferrer noopener" href="http://carliekarma.com/" target="_blank">Carlie Guilfoile</a> & myself</p>
+
+
+
+<h4>KEY CONTRIBUTIONS</h4>
+
+
+
+<p>Research<br>Concept Development<br>Tangible Product Design<br>Service Design</p>
+
+
+
+<h4>Time Frame</h4>
+
+
+
+<p>Seven Weeks</p>
+
+
+
+<h4>TOOLS & METHODS</h4>
+
+
+
+<p>Adobe AfterEffects<br>InDesign<br>Illustrator<br>Fusion 360<br>Pen + Paper</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width hmw"><div class="wp-block-group__inner-container">
+<h1><strong>How might we leverage autonomous vehicle technology to bridge the transportation gap sustainably,</strong> <strong>affordably,</strong> <strong>and dependably?</strong></h1>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332527046_0ed8dc623a_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>The Challenge</h3>
+
+
+
+<p>Transportation is now the top contributor to greenhouse gas emissions. This, coupled with growing urban populations and the fact that nearly 90% of U.S. commuters use personal vehicles as their primary mode of transportation, ultimately makes driving unsustainable in many burgeoning metropolises. Cities are looking for low-impact ways to move people around that leverages existing infrastructure to keep implementation realistic.</p>
+
+
+
+<p>Here, we saw a design opportunity in solving the last mile problem. Could a service centered around autonomous vehicles be implemented in a way that is convenient enough to overtake personal vehicle use, and solve transit issues, rather than exacerbating them?</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332099623_96f7b3ab3c_o.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>The Outcome</h3>
+
+
+
+<p>Avivi is a service that aims to direct this innovation towards making lives better for those disconnected from major transit arteries, thus leveraging it to do the most good. In this seven-week exploration, we developed the seeds of a service that brings autonomous vehicles to the public in a way that is sustainable, affordable, and dependable.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="boxes full-width imagebox" style="display:flex; align-items: center; justify-content: center;"><iframe src="https://player.vimeo.com/video/298295192?title=0&byline=0&portrait=0" style="position:absolute;width:90%;height:90%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332527001_028e5f0507_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Public Partnership-Led Autonomous Transit</h3>
+
+
+
+<p>What makes Avivi unique is its public-private partnership—a reliable approach to solving the last-mile problem can only work if major transit arteries are not clogged by low-capacity vehicles.</p>
+
+
+
+<p>Avivi integrates public transit information into the service to allow for reliable route planning and minimal wait times at transfer points.</p>
+
+
+
+<h3>Fixed Mornings, Flexible Evenings</h3>
+
+
+
+<p>As a commuter service, Avivi adapts to commuter patterns at different times of day. In the mornings, commuters must arrive regularly at a set time. Commuter pass holders can reserve a daily ride on Avivi shuttles to ensure they arrive at work on time. </p>
+
+
+
+<p>At the end of the day, however, patterns tend to shift due to hobbies, overtime, and errands. To answer this call, Avivi uses a different pattern in the evenings, where commuters call vehicles on demand. Avivi shuttles are deployed when a critical mass of riders is reached, but with a comfortable maximum wait time.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl"><div class="wp-block-group__inner-container">
+<div><iframe src="https://player.vimeo.com/video/313462610?autoplay=1&loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Mobile App</h3>
+
+
+
+<p>The primary point of communication with the service is the app. Here, users can select their plans, plan and track routes, and receive notifications for most convenient connections.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332061688_113f17389b_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Avivi Key</h3>
+
+
+
+<p>The Avivi key acts as a secondary check-in device to keep commuters safe. It is also used in-shuttle to set personalization settings.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332581486_4cd1a015e4_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332748332_2254a965f8_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h2>Our Process</h2>
+
+
+
+<h3>Brainstorming</h3>
+
+
+
+<p>We came together as a team for this project with mutual interest in creating something for social good. During our early meetings, we discussed what current disruptive technologies have potential to have the most positive effects on communities.</p>
+
+
+
+<p>Autonomous vehicle technology evokes a range of excitement and fear among the public. We set out to design a use for autonomous vehicles that makes lives better—not only for those who could feasibly own the technology, but for communities at large.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large grayscale"><img src="https://live.staticflickr.com/65535/49332983227_a36b360129_o.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Defining Stakeholders</h3>
+
+
+
+<p>To get ideas flowing, we built a territory map to discover shared concerns among stakeholders in the commuting space. We quickly realized that visualizing these shared concerns would be difficult, since many concerns were shared over different assemblages of stakeholders.</p>
+
+
+
+<p>Our final territory map reflected the fact that these lines of concern were blurred, by showing a group of users in the center, surrounded by their granular concerns, with overarching themes in the last layer. </p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332061973_7670c3ab6f_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332748017_586087c997_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h4>Survey</h4>
+
+
+
+<p>We followed this up with two surveys sent to over 70 participants, asking them about their various attitudes and experiences with commuting and autonomous vehicles.</p>
+
+
+
+<p>In the free text entry portions of our survey, we learned that users who default to public transit like it because, at its best, it’s a time to spend enjoying solitude uninterrupted by the stresses of driving. At worst, commuting by public transit is frustrating due to its unpredictability, vulnerability to delays, and pains of connecting from one’s home.</p>
+
+
+
+<p>This told us right off the bat that seamlessness is the most attractive selling point for public transit, and if we can amplify that through autonomous vehicles, coupling it with its inherent strengths, we’d have a decent service. As one survey respondent put it:</p>
+
+
+
+<blockquote class="wp-block-quote"><p><strong>“I’m happiest when I don’t have to think about my commute and it just goes well.”</strong></p></blockquote>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332061043_5918fdc1bc_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Exploratory Research</h3>
+
+
+
+<h4>Competitive Analysis</h4>
+
+
+
+<p>We researched five different ride sharing & transit services in detail in order to determine our service model. For each of the companies, we focused on identifying the unique service value, sign-up process, payment models and service structure. In addition to these private companies, we also did research on pilot AV services, like the <a target="_blank" href="https://mcity.umich.edu/" rel="noreferrer noopener">Mcity Driverless Shuttle</a> at the University of Michigan and <a target="_blank" href="http://www.govtech.com/transportation/Driverless-Shuttles-Hit-the-Streets-of-Detroit.html" rel="noreferrer noopener">May Mobility AV Shuttles</a> in Detroit. </p>
+
+
+
+<p>This research was ongoing throughout the design process, but what it ultimately helped us do was determine our own value proposition. Much like Chariot, we wanted to have different types of payment options (All Access vs Credits) to make our service flexible, yet efficient. </p>
+
+
+
+<p>We also found interest in how Via licenses their technology to local transportation authorities. In combination with our scenarios and exploratory research, competitive analysis helped us lay a foundation for how we wanted to serve our user.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332061453_9d02a43458_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h4>Expert Interviews & Secondary Research</h4>
+
+
+
+<p>What was truly pivotal in our development were the interviews we were fortunate enough to conduct with professionals at the forefront of autonomous vehicle research. While many couldn’t discuss their research explicitly, they helped us to begin asking the questions that are driving much of the research happening today.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332748767_f686794ff3_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Design Imperatives</h3>
+
+
+
+<p>This wealth of information from stakeholders and experts, along with secondary research, helped us to formulate the design imperatives that guided us through the development of our service. </p>
+
+
+
+<p><strong>Our service <em>must </em>prioritize safety. </strong></p>
+
+
+
+<p><strong>Our service <em>should</em> consider reliability and comfort.</strong></p>
+
+
+
+<p><strong>Our service <em>could</em> address the bigger picture. </strong></p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large grayscale"><img src="https://live.staticflickr.com/65535/49332526886_df6be5c983_o.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Concept Development</h3>
+
+
+
+<p>This wealth of information from stakeholders and experts, along with secondary research, helped us to formulate the imperatives that guided us through the development of our service.</p>
+
+
+
+<p>We developed four unique personas and scenarios that helped us think about what an autonomous ride-sharing service might look like for people of different income levels, different living situations and commuting needs.</p>
+
+
+
+<p>We experimented with voice, visual and tactile features – and how they would fit into a system that spanned home, vehicle and work.</p>
+
+
+
+<p>Going into scenario-building, we had already scoped in on serving commuters, but had not decided on the type of service we would provide (i.e. shuttle vs on-demand ridesharing vs. private end-to-end service). This exercise was in many ways challenging because it was our first attempt at trying to make sense of unique user experiences and feasible service models at the same time.</p>
+
+
+
+<p>Going into testing, we decided to try a <strong>branching storyboard model </strong>to gut check different components.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large grayscale"><img src="https://live.staticflickr.com/65535/49332526826_058a71f157_o.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Speed Dating</h3>
+
+
+
+<p>We tested with prospective users (namely, commuters who own a car, but do not use it to commute to work). </p>
+
+
+
+<p>This helped us to discover not only which touchpoints would be most useful to our target audience, but recurring themes that would help us define what they would want out of our service overall.</p>
+
+
+
+<p>What we learned is that users wanted to be able to go on autopilot (a best case scenario when riding public transit currently) and be able to enjoy solitude (the greatest affordance of commuting by car), and just about everything else was superfluous. Anything we created would have to facilitate those things in order to resonate with our target users. Relating back to our imperatives, this translated to a slight reprioritization:</p>
+
+
+
+<p><strong>Comfort: </strong>Comfort is ease. On short commutes, people value “me time” over added features.</p>
+
+
+
+<p><strong>Reliability: </strong>To users, reliability means being able to get to work everyday at a certain time, but having flexibility on the way home.</p>
+
+
+
+<p><strong>Safety: </strong>In the context of a service, people are less concerned about safety then they are about ease.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332645786_11ef6a0178_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h3>Refinement</h3>
+
+
+
+<p>This all led us to build a multiple-touchpoint system, centered around the service itself.</p>
+</div></div>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332527251_a7402cc0eb_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes full-width imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332061858_2267ffc217_o.png" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group boxes split"><div class="wp-block-group__inner-container">
+<div class="wp-block-group box boxl imagebox"><div class="wp-block-group__inner-container">
+<figure class="wp-block-image size-large"><img src="https://live.staticflickr.com/65535/49332891757_18c43be85a_o.jpg" alt=""></figure>
+</div></div>
+
+
+
+<div class="wp-block-group box boxr"><div class="wp-block-group__inner-container">
+<h2>Reflections</h2>
+
+
+
+<h3>What was helpful</h3>
+
+
+
+<p>This is a vast research landscape at the moment, and it was a lot to take on for a six-week project. We were lucky to conduct it at Carnegie Mellon and in Pittsburgh, because it afforded access to conversations with people who could help frame the potential of AVs in a way that sifting through research papers alone could not. Our solution at its core is quite simple, but it only works with autonomous technology, and their insight was essential for framing it properly.</p>
+
+
+
+<h3>What has the most potential</h3>
+
+
+
+<p>Based on research and testing, we believe that the service model, with a core customer base using the service in a scheduled manner supplemented by users who fill empty seats at the last minute, is a very economically sound use of AVs and can be of help to a wide range of users. This essentially is the model that many existing train services use, with both reserved and unreserved seats, and we see the potential for applying a similar model to help sustain a commuting transit service that gets regular scheduled usage.</p>
+
+
+
+<h3>Given more time…</h3>
+
+
+
+<p>We would have further developed our service-scape in three key areas. First, we would have developed an in-car screen component to communicate safety measures to the riders. We didn’t develop this piece for the presentation because we received mixed feedback around this component during user testing. We also felt like there was more research to be done around when to provide visual feedback to the riders. </p>
+
+
+
+<p>Second, given more time, we would have done more testing and prototyping on the SOS feature of the Avivi key. We explored this feature as a tool for interpersonal safety but ultimately didn’t feel like it was an essential element of our user’s system. Third, we would like to test more users in order to consider features and comfort levels for different lengths of commute.</p>
+</div></div>
+</div></div>
+
+		</main>
+	</div>
+
+</div></div></body></html>
