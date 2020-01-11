@@ -20,11 +20,12 @@ jQuery(document).ready(function($) {
 
 
 
+    setTimeout(function() {
 
     /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
-        $(".intro").css("cursor", "url(https://ulumills.github.io/wp-content/uploads/2019/12/Asset-4-r.png), auto");
+        $(".arrow").css("background-image", "url('wp-content/themes/ulu_port2/theme_imgs/arrow.gif')");
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
             document.getElementById("menuContainer").style.top = "0px";
@@ -33,6 +34,8 @@ jQuery(document).ready(function($) {
         }
         prevScrollpos = currentScrollPos;
     }
+
+    }, 500);
 
     $('#menuContainer').hover(function(){
         document.getElementById("menuContainer").style.top = "0px";

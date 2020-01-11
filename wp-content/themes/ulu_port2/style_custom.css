@@ -33,13 +33,14 @@ p a, p a:hover, p a:visited {color: #222831;text-decoration: underline;}
 @media (max-width: 768px) {.menuItemContainer {position: relative;left: -80px;top: 0;height: 33vh;width: 100vw;padding-left: 0;padding-top: 4rem;box-sizing: border-box;display: none;opacity: 0;box-shadow: 2px 2px;background: #fafafa;}
 	.menu-item {padding-left: 27px;height: 27%;width: 100%;}
 	#menuContainer:hover .menuItemContainer {display: block;}}
+.arrow {display: block;height: 60px;width: 60px;background-size: contain;}
 .divider-line {display: block;width: 5rem;border-bottom: 1px solid white;margin: 1.75rem 0 2rem;}
 .frontPgContainer {display: flex;flex-direction: row;align-items: flex-end;}
 @media (max-width:768px) {.frontPgContainer {flex-direction: column;}}
 .frontPgModule {display: flex;flex-direction: column;justify-content: center;align-items: center;margin: 5vh 5vw;}
 .frontPgModule {height: 90vh;width: 90vw;}
 @media (max-width:768px) {.frontPgModule {}}
-.intro {background: repeating-linear-gradient(45deg,rgba(96,103,114,.35),rgba(96,103,114,.35) 1px,transparent 1px,transparent 20px);cursor: url("https://ulumills.github.io/wp-content/uploads/2019/12/Asset-1.png"),auto;}
+.intro {background: repeating-linear-gradient(45deg,rgba(96,103,114,.35),rgba(96,103,114,.35) 1px,transparent 1px,transparent 20px);}
 .intro--black, .intro--black * {color: black;border-color: black;}
 .intro--white, .intro--white * {color: white;border-color: white;}
 .intro h1, .intro p {background-color: white;padding: 1rem;max-width: 80vw;}
