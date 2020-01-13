@@ -33,7 +33,7 @@ p a, p a:hover, p a:visited {color: #222831;text-decoration: underline;}
 @media (max-width: 768px) {.menuItemContainer {position: relative;left: -80px;top: 0;height: 33vh;width: 100vw;padding-left: 0;padding-top: 4rem;box-sizing: border-box;display: none;opacity: 0;box-shadow: 2px 2px;background: #fafafa;}
 	.menu-item {padding-left: 27px;height: 27%;width: 100%;}
 	#menuContainer:hover .menuItemContainer {display: block;}}
-.arrow {display: block;height: 60px;width: 60px;background-size: contain;}
+@media (min-width:768px) {.arrow {display: block;height: 60px;width: 60px;background-size: contain;}}
 .divider-line {display: block;width: 5rem;border-bottom: 1px solid white;margin: 1.75rem 0 2rem;}
 .frontPgContainer {display: flex;flex-direction: row;align-items: flex-end;}
 @media (max-width:768px) {.frontPgContainer {flex-direction: column;}}
@@ -46,6 +46,7 @@ p a, p a:hover, p a:visited {color: #222831;text-decoration: underline;}
 .intro h1, .intro p {background-color: white;padding: 1rem;max-width: 80vw;}
 .link-wrap {text-decoration: inherit;}
 .project-details {width: 90vh;}
+@media (max-width: 768px) {.project-details {width: 100vh;}}
 .project-details {display: block;margin-top: calc(50vh - 300px);margin-left: 2rem;box-sizing: border-box;border-bottom: 5px solid #222831;}
 .project-name a:hover {text-decoration: underline;text-underline-offset: 3px;}
 .project-image {display: block;height: 60%;background: #eee;z-index: -10;background-position: center;background-size: cover;}

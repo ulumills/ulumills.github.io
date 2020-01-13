@@ -1,18 +1,25 @@
 jQuery(document).ready(function($) {
     // document.addEventListener('touchstart', handler, {passive: true});
 
+
     var viewportWidth = $(window).width();
 
-    if (viewportWidth > 768) {
-        $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
-            {
-                height: 'auto',                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
-                onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
-                    // console.log(percent);
-                }
-            });
-    }
 
+
+
+    $(window).on("load resize",function(e){
+        if (viewportWidth > 768) {
+            $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
+                {
+                    height: 'auto',                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
+                    onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
+                        // console.log(percent);
+                    }
+                });
+        }
+        $(window).resize(function(){
+        });
+    });
 
     $(function() {
         $('body').removeClass('fade-out');
@@ -24,6 +31,7 @@ jQuery(document).ready(function($) {
 
     /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
     var prevScrollpos = window.pageYOffset;
+
     window.onscroll = function() {
         $(".arrow").css("background-image", "url('wp-content/themes/ulu_port2/theme_imgs/arrow.gif')");
         var currentScrollPos = window.pageYOffset;
@@ -179,5 +187,6 @@ $(".zoooom a").css("cursor", "zoom-in");
 
 
 });
+
 
 
