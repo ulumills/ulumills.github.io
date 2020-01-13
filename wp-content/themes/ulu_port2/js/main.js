@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 
 
 
-    $(window).on("load resize",function(e){
+    $(window).on("load resize ready",function(e){
         if (viewportWidth > 768) {
             $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
                 {
