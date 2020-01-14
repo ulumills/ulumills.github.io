@@ -54,16 +54,10 @@ jQuery(document).ready(function($) {
         $('.project-details').each(function(){
             var thisLeft = $(this).offset().left - $(window).scrollLeft(),
                 thisRight = thisLeft + $(this).width();
-            console.log(thisLeft);
 
             if (gifTrigger >= thisLeft) {
-                // console.log("trigger = " + fadeTrigger + ", bottom = " + thisBottom);
-                //                $(this).prev().nextUntil(':not(.split)').each(function(){
                 $(this).find('.project-image-2')
                     .fadeIn(500);
-                //                    console.log(topOfBox + " bottom");
-
-                //                });
 
             }
 
