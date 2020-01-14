@@ -4,10 +4,18 @@ jQuery(document).ready(function($) {
 
     var viewportWidth = $(window).width();
 
+    if (viewportWidth > 768) {
+        $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
+            {
+                height: 'auto',                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
+                onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
+                    // console.log(percent);
+                }
+            });
+    }
 
 
-
-    $(window).on("ready load resize",function(e){
+    $(window).on("resize",function(e){
         if (viewportWidth > 768) {
             $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
                 {
