@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 
 
 
-    $(window).on("load resize ready",function(e){
+    $(window).on("ready load resize",function(e){
         if (viewportWidth > 768) {
             $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
                 {
@@ -17,13 +17,16 @@ jQuery(document).ready(function($) {
                     }
                 });
         }
-        $(window).resize(function(){
-        });
     });
 
     $(function() {
         $('body').removeClass('fade-out');
     });
+
+
+
+
+
 
 
 
@@ -41,6 +44,34 @@ jQuery(document).ready(function($) {
             document.getElementById("menuContainer").style.top = "-70px";
         }
         prevScrollpos = currentScrollPos;
+
+
+        //SHOW GIF
+
+        var windowWidth = $(window).width(),
+            gifTrigger = windowWidth * .5;
+        //when next split reaches 50%, crossfade boxl to that of next split--do with opacity and nextUntil?
+        $('.project-details').each(function(){
+            var thisLeft = $(this).offset().left - $(window).scrollLeft(),
+                thisRight = thisLeft + $(this).width();
+            console.log(thisLeft);
+
+            if (gifTrigger >= thisLeft) {
+                // console.log("trigger = " + fadeTrigger + ", bottom = " + thisBottom);
+                //                $(this).prev().nextUntil(':not(.split)').each(function(){
+                $(this).find('.project-image-2')
+                    .fadeIn(500);
+                //                    console.log(topOfBox + " bottom");
+
+                //                });
+
+            }
+
+        });
+
+
+
+
     }
 
     }, 500);
@@ -139,8 +170,6 @@ jQuery(document).ready(function($) {
 
 
 
-
-
             //IT WORKS!!
             var windowHeight = $(window).height(),
                 fadeTrigger = windowHeight * .5;
@@ -172,6 +201,12 @@ jQuery(document).ready(function($) {
     } else {
         $(".boxl").addClass("appear");
     }
+
+
+
+
+
+
 
 if (($("#mode")).hasClass("dark")) {
     $("body").addClass("darkbg darktext");

@@ -49,10 +49,12 @@ p a, p a:hover, p a:visited {color: #222831;text-decoration: underline;}
 @media (max-width: 768px) {.project-details {width: 100vh;}}
 .project-details {display: block;margin-top: calc(50vh - 300px);margin-left: 2rem;box-sizing: border-box;border-bottom: 5px solid #222831;}
 .project-name a:hover {text-decoration: underline;text-underline-offset: 3px;}
-.project-image {display: block;height: 60%;background: #eee;z-index: -10;background-position: center;background-size: cover;}
+.project-image, .project-image-2 {display: block;z-index: -10;background-position: center;background-size: cover;}
+.project-image {height: 60%;}
+.project-image-2 {height: 100%;display: none;}
 .project-name * {font-size: 1.75rem;margin-top: .5rem;line-height: 1.25;font-weight: 600;}
 @media (max-width: 768px) {.project-name * {font-size: 1.5rem;}
-	.project-image {height: 40vh;}}
+	.project-image, .project-image-2 {height: 40vh;}}
 .project-intro {}
 .project-type * {}
 .tags {margin-top: .5rem;}
