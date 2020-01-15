@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
     var prevScrollpos = window.pageYOffset;
 
     window.onscroll = function() {
-        $(".arrow").css("background-image", "url('wp-content/themes/ulu_port2/theme_imgs/arrow.gif')");
+        $(".arrow").css("background-image", "url('https://ulumills.github.io/wp-content/themes/ulu_port2/theme_imgs/arrow.gif')");
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
             document.getElementById("menuContainer").style.top = "0px";
