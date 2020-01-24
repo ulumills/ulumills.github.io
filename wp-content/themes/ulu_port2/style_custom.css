@@ -22,7 +22,7 @@ p strong {font-weight: 500;color: #222831;}
 a, a:hover, a:visited {color: #222831;text-decoration: none;}
 p a, p a:hover, p a:visited {color: #222831;text-decoration: underline;}
 .lead {font-size: 1.25rem;font-style: oblique;color: #222831;margin-bottom: 4rem;border-left: 1px solid #222831;padding: 0rem 0rem .25rem 1rem;}
-::selection {background: greenyellow;}
+::selection {background: black;color: white;}
 .menuu {padding: 8px;display: flex;justify-content: center;align-items: center;width: 90px;font-family: "Vulf Mono";font-weight: 600;font-style: italic;font-size: 1rem;line-height: 1.5;box-sizing: border-box;background: url("https://ulumills.github.io/wp-content/uploads/2019/12/Site-logo-1.png");-webkit-background-size: cover;background-size: cover;z-index: 1000;}
 @media (max-width: 768px) {.menuu {background-color: black !important;background: url("https://ulumills.github.io/wp-content/uploads/2019/09/hamburger.svg");width: 48px;height: 48px;}}
 #menuContainer {display: flex;flex-direction: row;position: fixed;top: 0px;left: 16px;z-index: 1000000;height: 90px;transition: top .3s ease-in-out;}
@@ -109,3 +109,14 @@ img {max-height: none;}
 .darktext {color: rgba(255,255,255,.6);}
 .darkimg {background: #090d0f !important;}
 .lp-screen-text {font-family: Obviously !important;}
+.related-container h1 {font-size: 1.2rem;margin-top: .5rem;}
+.related-container h4 {margin-bottom: 1rem;}
+.related-project-container {display: flex;flex-direction: row;justify-content: space-between;}
+.related-image {display: block;background: #fcf;width: auto;height: 72%;background-position: center;background-size: cover;}
+.related-project {height: 45vh;width: 31%;}
+.related-container {padding: 2rem 4rem;border-top: 3px solid black;background: slategray;}
+.related-container * {color: white !important;}
+@media (max-width:768px) {.related-project-container {flex-direction: column;}
+	.related-project {width: 100%;}}
+.footer-metadata {}
+.footer-metadata * {font-weight: 300;font-size: .85rem;}
