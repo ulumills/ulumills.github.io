@@ -132,7 +132,7 @@ var cp_loadingpage = cp_loadingpage || {};
     lp['completeImageLoading'] = function ()
 	{
         done++;
-        var percentage = (imageCounter) ? done / imageCounter * 100 : 100;
+        var percentage = (imageCounter) ? Math.min(done / imageCounter * 100, 100) : 100;
         lp.graphicAction( 'set', percentage );
 
         if (imageCounter <= done  && !(lp.options['removeInOnLoad']*1))
