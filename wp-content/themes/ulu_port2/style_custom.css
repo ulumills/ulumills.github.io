@@ -94,7 +94,7 @@ p a, p a:hover, p a:visited {color: black;text-decoration: underline;}
 .boxes:last-of-type {margin-bottom: 4rem;}
 @media (max-width: 768px) {.boxes > * {flex-direction: column;}}
 .box {vertical-align: middle;line-height: 1.3;padding: 32px;box-sizing: border-box;}
-.box, .full-width, .entry-content, .wp-block-spacer {background: #fff;}
+.box, .full-width, .boxes, .twitter {background: #fff;}
 .boxl {width: 60%;position: sticky;top: 0;font-size: 3rem;display: flex;justify-content: center;align-items: center;overflow: hidden;}
 .boxl > * {display: flex;flex-direction: column;justify-content: center;align-items: center;overflow: hidden;}
 .boxl:not(.imagebox) {padding: 0;background-color: #fff;}
