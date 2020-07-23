@@ -202,11 +202,11 @@ jQuery(document).ready(function ($) {
     $('a[href^="https://"]').not('a[href*=ulumills]').attr('target', '_blank');
     $('a[href^="http://"]').not('a[href*=ulumills]').attr('target', '_blank');
 
-
-    //This does a footer reveal
-    var footerHeight = $(".related-container").height();
-    $('#page').css("margin-bottom", footerHeight);
-
+    if ($(window).width() >= 768) {
+        //This does a footer reveal
+        var footerHeight = $(".related-container").height();
+        $('#page').css("margin-bottom", footerHeight);
+    } 
 
 });
 
