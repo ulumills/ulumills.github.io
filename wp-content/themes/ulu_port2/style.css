@@ -796,6 +796,13 @@ p a, p a:hover, p a:visited {
   background-size: cover;
   z-index: 1000;
 }
+.menuu a {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
 @media (max-width: 768px) {
   .menuu {
@@ -852,12 +859,17 @@ p a, p a:hover, p a:visited {
   font-weight: 500;
   /*    display: none;*/
 }
-
+.menu-item a {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 .menu-item:hover {
   background: gray;
   transition: 100ms ease-in-out;
 }
-
 .menu-item:hover a {
   color: white;
   transition: 100ms ease-in-out;
@@ -898,22 +910,24 @@ p a, p a:hover, p a:visited {
   padding: 2rem 4rem;
   /*margin-top: 1rem;*/
   /*border-top: 3px solid black;*/
-  background: slategray;
+  background: #efefef;
   z-index: -1;
   box-sizing: border-box;
   width: 100%;
 }
-.related-container * {
-  color: white !important;
-}
 .related-container h1 {
   font-size: 1.2rem;
   margin-top: 0.5rem;
+  font-weight: 600;
 }
 .related-container h4 {
   margin-bottom: 1rem;
+  border-bottom: 1px solid;
+  padding-bottom: 0.5rem;
+  font-family: "obviously-narrow";
+  letter-spacing: 0.5px;
 }
-@media screen and (min-width: tablet-v) {
+@media screen and (min-width: 768px) {
   .related-container {
     position: fixed;
     bottom: 0;
@@ -1147,6 +1161,16 @@ object {
 
 .wp-caption-text {
   text-align: center;
+}
+
+.wp-block-image figcaption {
+  margin-top: 1em;
+  margin-bottom: 0;
+  font-family: "obviously-narrow", Sans-Serif;
+  letter-spacing: 0.5px;
+  font-size: small;
+  padding-top: 0.25rem;
+  border-top: 1px solid;
 }
 
 /*--------------------------------------------------------------

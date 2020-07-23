@@ -206,7 +206,7 @@ jQuery(document).ready(function ($) {
         //This does a footer reveal
         var footerHeight = $(".related-container").height();
         $('#page').css("margin-bottom", footerHeight);
-    } 
+    }
 
 });
 
