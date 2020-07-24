@@ -910,7 +910,7 @@ p a, p a:hover, p a:visited {
   padding: 2rem 4rem;
   /*margin-top: 1rem;*/
   /*border-top: 3px solid black;*/
-  background: #efefef;
+  background: #dee2e5;
   z-index: -1;
   box-sizing: border-box;
   width: 100%;
@@ -923,9 +923,9 @@ p a, p a:hover, p a:visited {
   text-align: center;
 }
 .related-container h4 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border-bottom: 1px solid;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
   font-family: "obviously-narrow";
   letter-spacing: 0.5px;
 }
@@ -1343,7 +1343,7 @@ body.fade-out {
 @media screen and (min-width: 500px) {
   .projects {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    margin: auto;
+    margin: auto auto 8rem;
   }
 }
 
@@ -1532,10 +1532,6 @@ body.fade-out {
 .boxes > * {
   display: flex;
   flex-direction: row;
-}
-
-.boxes:last-of-type {
-  margin-bottom: 4rem;
 }
 
 @media (max-width: 768px) {
@@ -1797,6 +1793,17 @@ img {
 
 .darkimg {
   background: #090D0F !important;
+}
+
+/*
+#######################
+##______VIMEO______
+#######################
+*/
+.wp-block-embed__wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

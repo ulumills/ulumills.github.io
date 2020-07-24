@@ -164,7 +164,8 @@ jQuery(document).ready(function ($) {
 
     if ($(window).width() >= 768) {
         //This does a footer reveal
-        var footerHeight = $(".related-container").height();
+        var footerHeight = $("#colophon").outerHeight();
+        // var extrapadding = 32px;
         $('#page').css("margin-bottom", footerHeight);
     }
 
