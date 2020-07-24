@@ -4,75 +4,35 @@ jQuery(document).ready(function ($) {
 
     var viewportWidth = $(window).width();
 
-    if (viewportWidth > 768) {
-        $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
-            {
-                height: 'auto',                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
-                onScroll: function (percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
-                    // console.log(percent);
-                }
-            });
-    }
-
-
-    $(window).on("resize", function (e) {
-        if (viewportWidth > 768) {
-            $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
-                {
-                    height: 'auto',                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
-                    onScroll: function (percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
-                        // console.log(percent);
-                    }
-                });
-        }
-    });
+    // if (viewportWidth > 768) {
+    //     $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
+    //         {
+    //             height: 'auto',                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
+    //             onScroll: function (percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
+    //                 // console.log(percent);
+    //             }
+    //         });
+    // }
+    //
+    //
+    // $(window).on("resize", function (e) {
+    //     if (viewportWidth > 768) {
+    //         $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
+    //             {
+    //                 height: 'auto',                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
+    //                 onScroll: function (percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
+    //                     // console.log(percent);
+    //                 }
+    //             });
+    //     }
+    // });
 
     $(function () {
         $('body').removeClass('fade-out');
     });
 
 
-    setTimeout(function () {
 
-        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-        var prevScrollpos = window.pageYOffset;
-
-        window.onscroll = function () {
-            $(".arrow").css("transform", "rotate(-90deg)");
-            var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("menuContainer").style.top = "0px";
-            } else {
-                document.getElementById("menuContainer").style.top = "-70px";
-            }
-            prevScrollpos = currentScrollPos;
-
-            if ($(window).scrollTop() == 0) {
-                $(".arrow").css("transform", "rotate(0deg)");
-            }
-
-
-            //SHOW GIF
-
-            var windowWidth = $(window).width(),
-                gifTrigger = windowWidth * .5;
-            //when next split reaches 50%, crossfade boxl to that of next split--do with opacity and nextUntil?
-            $('.project-details').each(function () {
-                var thisLeft = $(this).offset().left - $(window).scrollLeft(),
-                    thisRight = thisLeft + $(this).width();
-
-                if (gifTrigger >= thisLeft) {
-                    // $(this).find('.project-image-2')
-                    // .fadeIn(500);
-
-                }
-
-            });
-
-
-        }
-
-    }, 500);
 
     $('#menuContainer').hover(function () {
         document.getElementById("menuContainer").style.top = "0px";
