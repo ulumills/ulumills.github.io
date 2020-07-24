@@ -791,7 +791,7 @@ p a, p a:hover, p a:visited {
   font-size: 1rem;
   line-height: 1.5;
   box-sizing: border-box;
-  background: url("http://ulumills.github.io/wp-content/uploads/2019/12/Site-logo-1.png");
+  background: url("http://ulumills.dev.cc/wp-content/uploads/2019/12/Site-logo-1.png");
   -webkit-background-size: cover;
   background-size: cover;
   z-index: 1000;
@@ -807,7 +807,7 @@ p a, p a:hover, p a:visited {
 @media (max-width: 768px) {
   .menuu {
     background-color: black !important;
-    background: url("http://ulumills.github.io/wp-content/uploads/2019/09/hamburger.svg");
+    background: url("http://ulumills.dev.cc/wp-content/uploads/2019/09/hamburger.svg");
     width: 48px;
     height: 48px;
   }
