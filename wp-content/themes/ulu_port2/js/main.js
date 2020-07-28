@@ -151,9 +151,11 @@ jQuery(document).ready(function ($) {
 
 
     if (($("#mode")).hasClass("dark")) {
-        $("body").addClass("darkbg darktext");
+        $(".boxr, figcaption").addClass("darkbg darktext");
+        $(".box, .full-width, .boxes, .wp-block-spacer, .one-section, .entry-content").addClass("darkbg");
         $("h1,h2,h3,h4,h5,h6,.lead, :not(.menu-item)>a, strong").addClass("darkheader");
         $(":not(.full-width).imagebox").addClass("darkimg");
+        $("footer *").removeClass("darkbg darktext darkheader");
     }
 
 
