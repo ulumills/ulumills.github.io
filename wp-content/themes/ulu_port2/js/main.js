@@ -64,6 +64,10 @@ jQuery(document).ready(function ($) {
                             .addClass("fixed");
                         $(this).find('.boxr')
                             .addClass("boxrModified");
+
+
+
+
                     });
                 }
 
