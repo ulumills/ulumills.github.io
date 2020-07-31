@@ -1653,7 +1653,7 @@ body.fade-out {
   }
 
   .boxr {
-    min-height: 100vh;
+    min-height: 110vh;
     padding-right: 4rem;
   }
 }
@@ -1832,16 +1832,6 @@ img {
   display: flex;
   justify-content: center;
   padding: 2rem;
-}
-
-.box-video {
-  display: flex;
-  justify-content: center;
-}
-@media screen and (min-width: 768px) {
-  .box-video {
-    width: 35vw;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
