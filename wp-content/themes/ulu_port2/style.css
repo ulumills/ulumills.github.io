@@ -389,7 +389,7 @@ input,
 select,
 optgroup,
 textarea {
-  color: #0F1A20;
+  color: #777575;
   font-family: "obviously", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -435,11 +435,12 @@ h3 {
 
 h4 {
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.5;
   text-transform: uppercase;
   margin-top: 1.5rem;
   margin-bottom: 0.375rem;
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 768px) {
@@ -464,7 +465,7 @@ address {
 }
 
 pre {
-  background: #eee;
+  background: #fff;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -482,12 +483,12 @@ code, kbd, tt, var {
 }
 
 abbr, acronym {
-  border-bottom: 1px dotted #666;
+  border-bottom: 1px dotted #0F1A20;
   cursor: help;
 }
 
 mark, ins {
-  background: #fff9c0;
+  background: #0F1A20;
   text-decoration: none;
 }
 
@@ -503,7 +504,7 @@ p, li {
 }
 
 p strong {
-  font-weight: 600;
+  font-weight: 500;
   color: #0F1A20;
   /*font-weight: inherit;*/
 }
@@ -542,7 +543,7 @@ body {
 }
 
 hr {
-  background-color: #ccc;
+  background-color: #fff;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -599,9 +600,9 @@ input[type=button],
 input[type=reset],
 input[type=submit] {
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
+  border-color: #fff;
   border-radius: 3px;
-  background: #e6e6e6;
+  background: #fff;
   color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
   font-size: 0.75rem;
@@ -612,7 +613,7 @@ button:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover {
-  border-color: #ccc #bbb #aaa;
+  border-color: #E4DFD8;
 }
 button:active, button:focus,
 input[type=button]:active,
@@ -621,7 +622,7 @@ input[type=reset]:active,
 input[type=reset]:focus,
 input[type=submit]:active,
 input[type=submit]:focus {
-  border-color: #aaa #bbb #bbb;
+  border-color: #E4DFD8;
 }
 
 input[type=text],
@@ -640,8 +641,8 @@ input[type=datetime],
 input[type=datetime-local],
 input[type=color],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
+  color: #fff;
+  border: 1px solid #E4DFD8;
   border-radius: 3px;
   padding: 3px;
 }
@@ -661,11 +662,11 @@ input[type=datetime]:focus,
 input[type=datetime-local]:focus,
 input[type=color]:focus,
 textarea:focus {
-  color: #111;
+  color: #fff;
 }
 
 select {
-  border: 1px solid #ccc;
+  border: 1px solid #E4DFD8;
 }
 
 textarea {
@@ -681,6 +682,7 @@ textarea {
 a {
   color: #0F1A20;
   text-decoration: none;
+  font-weight: 500;
 }
 a:hover, a:focus, a:active {
   color: #0F1A20;
@@ -693,7 +695,7 @@ a:hover, a:active {
 }
 
 p a, p a:hover, p a:visited {
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #0F1A20;
 }
 
 /*--------------------------------------------------------------
@@ -803,7 +805,7 @@ p a, p a:hover, p a:visited {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: #000;
+  background-color: #0F1A20;
 }
 
 .hamburger-box {
@@ -822,7 +824,7 @@ p a, p a:hover, p a:visited {
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: #000;
+  background-color: #0F1A20;
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
@@ -885,7 +887,7 @@ p a, p a:hover, p a:visited {
   width: 44px;
   transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
   overflow: hidden;
-  z-index: 1;
+  z-index: 21;
 }
 
 .bg-expand {
@@ -958,9 +960,12 @@ p a, p a:hover, p a:visited {
   justify-self: center;
   margin-bottom: 0;
   list-style: none;
-  font-family: obviously-narrow, Sans-Serif;
+  font-family: obviously, Sans-Serif;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  line-height: 1;
+  font-size: 0.85rem;
 }
 
 /*--------------------------------------------------------------
@@ -979,14 +984,13 @@ p a, p a:hover, p a:visited {
   font-size: 1.2rem;
   margin-top: 0.5rem;
   font-weight: 600;
-  opacity: 0.7;
   text-align: center;
 }
 .related-container h4 {
   margin-bottom: 1.5rem;
   border-bottom: 1px solid;
   padding-bottom: 0.5rem;
-  font-family: "obviously-narrow";
+  font-family: "obviously";
   letter-spacing: 0.5px;
 }
 @media screen and (min-width: 768px) {
@@ -1041,7 +1045,10 @@ p a, p a:hover, p a:visited {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 500;
-  color: #0F1A20;
+  color: #777575;
+}
+.footer-metadata * a {
+  text-decoration: #777575;
 }
 
 /*--------------------------------------------------------------
@@ -1067,7 +1074,7 @@ p a, p a:hover, p a:visited {
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   clip-path: none;
-  color: #21759b;
+  color: #777575;
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
@@ -1296,7 +1303,7 @@ object {
 body {
   opacity: 1;
   transition: 1s opacity;
-  color: #0F1A20;
+  color: #777575;
 }
 
 body.fade-out {
@@ -1512,7 +1519,7 @@ body.fade-out {
   white-space: nowrap;
   margin: 1rem 0.75rem 0.375rem 0.75rem;
   font-size: 0.85rem;
-  font-weight: 400;
+  font-weight: 500;
   font-family: obviously-narrow;
   letter-spacing: 0.5px;
 }
@@ -1549,8 +1556,8 @@ body.fade-out {
 }
 
 .tags * {
-  background-color: #efefef;
-  color: black !important;
+  background-color: #F4EFE9;
+  color: #0F1A20 !important;
   padding: 0 0.5rem 0.25rem;
   line-height: 2.5;
   font-size: 0.85rem;
@@ -1559,7 +1566,7 @@ body.fade-out {
 }
 
 .tags *:hover {
-  background-color: #f7f7f7 !important;
+  background-color: #F4EFE9 !important;
   transition: background-color 0.3s ease-in-out;
 }
 
