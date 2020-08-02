@@ -175,6 +175,23 @@ jQuery(document).ready(function ($) {
         $('#page').css("margin-bottom", footerHeight);
     }
 
+    // NEW MENU FUNCTIONS
+
+    $(".hamburger").click(function(){
+        $(this).toggleClass("is-active");
+        $(".menu-bg").toggleClass("bg-expand");
+
+    });
+
+
+
+
+
+
+
+
+// END JQUERY
+
 });
 
 
