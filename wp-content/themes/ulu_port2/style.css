@@ -389,7 +389,7 @@ input,
 select,
 optgroup,
 textarea {
-  color: #777575;
+  color: #8C8C9B;
   font-family: "obviously", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -398,7 +398,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  color: #0F1A20;
+  color: #2A2A2E;
 }
 
 h1 {
@@ -483,12 +483,12 @@ code, kbd, tt, var {
 }
 
 abbr, acronym {
-  border-bottom: 1px dotted #0F1A20;
+  border-bottom: 1px dotted #2A2A2E;
   cursor: help;
 }
 
 mark, ins {
-  background: #0F1A20;
+  background: #2A2A2E;
   text-decoration: none;
 }
 
@@ -505,7 +505,7 @@ p, li {
 
 p strong {
   font-weight: 500;
-  color: #0F1A20;
+  color: #2A2A2E;
   /*font-weight: inherit;*/
 }
 
@@ -517,9 +517,9 @@ p strong {
   font-size: 1.25rem;
   /*line-height: 1.6;*/
   font-style: oblique;
-  color: #0F1A20;
+  color: #2A2A2E;
   margin-bottom: 4rem;
-  border-left: 1px solid #0F1A20;
+  border-left: 1px solid #2A2A2E;
   padding: 0rem 0rem 0.25rem 1rem;
 }
 
@@ -613,7 +613,7 @@ button:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover {
-  border-color: #E4DFD8;
+  border-color: #E2E2E6;
 }
 button:active, button:focus,
 input[type=button]:active,
@@ -622,7 +622,7 @@ input[type=reset]:active,
 input[type=reset]:focus,
 input[type=submit]:active,
 input[type=submit]:focus {
-  border-color: #E4DFD8;
+  border-color: #E2E2E6;
 }
 
 input[type=text],
@@ -642,7 +642,7 @@ input[type=datetime-local],
 input[type=color],
 textarea {
   color: #fff;
-  border: 1px solid #E4DFD8;
+  border: 1px solid #E2E2E6;
   border-radius: 3px;
   padding: 3px;
 }
@@ -666,7 +666,7 @@ textarea:focus {
 }
 
 select {
-  border: 1px solid #E4DFD8;
+  border: 1px solid #E2E2E6;
 }
 
 textarea {
@@ -680,12 +680,12 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #0F1A20;
+  color: #2A2A2E;
   text-decoration: none;
   font-weight: 500;
 }
 a:hover, a:focus, a:active {
-  color: #0F1A20;
+  color: #2A2A2E;
 }
 a:focus {
   outline: thin dotted;
@@ -695,7 +695,7 @@ a:hover, a:active {
 }
 
 p a, p a:hover, p a:visited {
-  border-bottom: 1px solid #0F1A20;
+  border-bottom: 1px solid #2A2A2E;
 }
 
 /*--------------------------------------------------------------
@@ -805,7 +805,7 @@ p a, p a:hover, p a:visited {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: #0F1A20;
+  background-color: #2A2A2E;
 }
 
 .hamburger-box {
@@ -824,7 +824,7 @@ p a, p a:hover, p a:visited {
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: #0F1A20;
+  background-color: #2A2A2E;
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
@@ -882,7 +882,7 @@ p a, p a:hover, p a:visited {
   top: 0;
   right: 0;
   transform-origin: top right;
-  background: #F4EFE9;
+  background: #D1D1D8;
   height: 44px;
   width: 44px;
   transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
@@ -975,7 +975,7 @@ p a, p a:hover, p a:visited {
   padding: 2rem 4rem;
   /*margin-top: 1rem;*/
   /*border-top: 3px solid black;*/
-  background: #E4DFD8;
+  background: #E2E2E6;
   z-index: -1;
   box-sizing: border-box;
   width: 100%;
@@ -1045,10 +1045,10 @@ p a, p a:hover, p a:visited {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 500;
-  color: #777575;
+  color: #8C8C9B;
 }
 .footer-metadata * a {
-  text-decoration: #777575;
+  text-decoration: #8C8C9B;
 }
 
 /*--------------------------------------------------------------
@@ -1069,12 +1069,12 @@ p a, p a:hover, p a:visited {
   /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 .screen-reader-text:focus {
-  background-color: #F4EFE9;
+  background-color: #f5f6f7;
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   clip-path: none;
-  color: #777575;
+  color: #8C8C9B;
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
@@ -1303,7 +1303,7 @@ object {
 body {
   opacity: 1;
   transition: 1s opacity;
-  color: #777575;
+  color: #8C8C9B;
 }
 
 body.fade-out {
@@ -1355,7 +1355,7 @@ body.fade-out {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  background-color: #F4EFE9;
+  background-color: #f5f6f7;
 }
 @media (max-width: 768px) {
   .frontPgContainer {
@@ -1378,7 +1378,7 @@ body.fade-out {
 }
 
 .intro {
-  background: linear-gradient(to bottom, #fff, #F4EFE9);
+  background: linear-gradient(to bottom, #fff, #f5f6f7);
   width: 100%;
 }
 
@@ -1556,8 +1556,8 @@ body.fade-out {
 }
 
 .tags * {
-  background-color: #F4EFE9;
-  color: #0F1A20 !important;
+  background-color: #f5f6f7;
+  color: #2A2A2E !important;
   padding: 0 0.5rem 0.25rem;
   line-height: 2.5;
   font-size: 0.85rem;
@@ -1566,7 +1566,7 @@ body.fade-out {
 }
 
 .tags *:hover {
-  background-color: #F4EFE9 !important;
+  background-color: #f5f6f7 !important;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -1753,7 +1753,7 @@ body.fade-out {
 }
 
 :not(.full-width).imagebox {
-  background: #F4EFE9;
+  background: #f5f6f7;
   display: flex;
   align-items: center;
   justify-content: center;
