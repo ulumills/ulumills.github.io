@@ -200,21 +200,20 @@ jQuery(document).ready(function ($) {
             msgJp = "おはよう!";
         }
         else if (hours < 18) {
-            msg = "Aloha 'auinala!";
+            msg = "Aloha 'auinalā!";
             msgEng = "Good afternoon!";
+            msgJp = "こんにちは!";
+        }
+
+        else {
+            msg = "Aloha ahiahi!";
+            msgEng = "Good evening!";
+            msgJp = "こんばんは!";
         }
 
 
-        else msg = "Aloha ahiahi","Good evening";
-        // $('.greeting').text(msg);
-        // $('.greetingEng').text(msgEng);
-    // $('#greeting').attr("data-msg", msg);  //setter
-
-
-
     // List of sentences
-    var _CONTENT = [ msgEng , msgJp , msg
-    ];
+    var _CONTENT = [ msgEng , msgJp , msg ];
 
 // Current sentence being processed
     var _PART = 0;
