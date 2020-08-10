@@ -197,18 +197,18 @@ jQuery(document).ready(function ($) {
         if (hours < 12) {
             msg = "Aloha kakahiaka!";
             msgEng = "Good morning!";
-            msgJp = "おはよう!";
+            msgJp = "おはよ！";
         }
         else if (hours < 18) {
             msg = "Aloha 'auinalā!";
             msgEng = "Good afternoon!";
-            msgJp = "こんにちは!";
+            msgJp = "こんにちは！";
         }
 
         else {
             msg = "Aloha ahiahi!";
             msgEng = "Good evening!";
-            msgJp = "こんばんは!";
+            msgJp = "こんばんは！";
         }
 
 
