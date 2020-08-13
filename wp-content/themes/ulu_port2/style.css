@@ -819,7 +819,7 @@ p a, p a:hover, p a:visited {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: #2A2A2E;
+  background-color: #fff;
 }
 
 .hamburger-box {
@@ -838,7 +838,7 @@ p a, p a:hover, p a:visited {
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: #2A2A2E;
+  background-color: #fff;
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
@@ -896,7 +896,7 @@ p a, p a:hover, p a:visited {
   top: 0;
   right: 0;
   transform-origin: top right;
-  background: #D1D1D8;
+  background: #2A2A2E;
   height: 44px;
   width: 44px;
   transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
@@ -980,6 +980,10 @@ p a, p a:hover, p a:visited {
   font-weight: 600;
   line-height: 1;
   font-size: 0.85rem;
+}
+
+.menu a, .menu a:hover, .menu a:active {
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1384,17 +1388,12 @@ body.fade-out {
   justify-content: center;
   align-items: center;
   margin: auto;
-  height: 100vh;
+  height: 90vh;
 }
 @media (max-width: 768px) {
   .frontPgModule {
     height: 85vh;
   }
-}
-
-.intro {
-  background: linear-gradient(to bottom, #fff, #f5f6f7);
-  width: 100%;
 }
 
 .intro-body {
@@ -1420,14 +1419,35 @@ body.fade-out {
   }
 }
 
+.intro {
+  background: linear-gradient(to bottom, #fff, #f5f6f7);
+  width: 100%;
+}
+
 .intro h1, .intro p {
   /*background-color: #f5f6f7;*/
   /*padding: 1rem;*/
   max-width: 80vw;
 }
+@media (max-width: 768px) {
+  .intro h1, .intro p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro p {
+    font-size: 1.125rem;
+  }
+}
 
 .intro h1 {
-  margin-bottom: 6vh;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 2.25rem;
+  }
 }
 
 .link-wrap {
@@ -1958,6 +1978,35 @@ h3:after {
   width: 5rem;
   content: "";
   margin: 0 auto 4rem;
+}
+
+.caveat {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  padding: 0 1rem;
+  font-weight: 300;
+}
+@media (max-width: 768px) {
+  .caveat {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}
+.caveat a {
+  border-bottom: 1px solid #2A2A2E;
+}
+.caveat:before {
+  content: "*";
+  display: block;
+  position: relative;
+  left: -16px;
+  top: 25px;
+}
+@media (max-width: 768px) {
+  .caveat:before {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
