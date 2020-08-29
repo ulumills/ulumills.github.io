@@ -63,7 +63,7 @@ jQuery(document).ready(function ($) {
                         $(this).find('.boxl')
                             .addClass("fixed");
                         $(this).find('.boxr')
-                            .addClass("boxrModified");
+                            .addClass("boxrFixed");
 
 
 
@@ -111,7 +111,7 @@ jQuery(document).ready(function ($) {
                     $('.boxl')
                         .removeClass("fixed");
                     $('.boxr')
-                        .removeClass("boxrModified");
+                        .removeClass("boxrFixed");
 
 
                     // });
@@ -179,7 +179,7 @@ jQuery(document).ready(function ($) {
 
     $(".hamburger").click(function(){
         $(this).toggleClass("is-active");
-        $(".menu-bg").toggleClass("bg-expand");
+        $(".menu-bg").toggleClass("menu-bg-open");
 
     });
 
@@ -197,18 +197,18 @@ jQuery(document).ready(function ($) {
         if (hours < 12) {
             msg = "Aloha kakahiaka!";
             msgEng = "Good morning!";
-            msgJp = "おはよう！";
+            msgJp = "おはよう!";
         }
         else if (hours < 18) {
-            msg = "Aloha 'auinalā!";
+            msg = "Aloha ‘auinalā!";
             msgEng = "Good afternoon!";
-            msgJp = "こんにちは！";
+            msgJp = "こんにちは!";
         }
 
         else {
             msg = "Aloha ahiahi!";
             msgEng = "Good evening!";
-            msgJp = "こんばんは！";
+            msgJp = "こんばんは!";
         }
 
 
