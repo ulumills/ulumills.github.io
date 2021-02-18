@@ -1,0 +1,29 @@
+
+
+<!DOCTYPE html>
+<!-- include A-Frame obviously -->
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+
+<body style="margin : 0px; overflow: hidden;">
+  <!-- minimal loader shown until image descriptors are loaded -->
+
+  <a-scene
+    vr-mode-ui="enabled: true;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="24" height="24" color="#009b69"></a-plane>
+    <a-plane position="4 4 -4" rotation="-90 0 0" width="6" height="6" color="#009b69"></a-plane>
+    <a-box position="0 2 -2" rotation="0 90 0" color="#4CC3D9"></a-box>
+    <a-box position="2 2.1 -1" rotation="0 45 0" color="#4CC3D9"></a-box>
+    <a-text value=”Ulu” width="10" position="0 3 -4" rotation="0 0 0"></a-text>
+
+    <!-- <a-entity camera></a-entity> -->
+    <a-marker-camera preset='hiro'></a-marker-camera>
+  </a-scene>
+</body>
+
